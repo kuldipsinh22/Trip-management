@@ -15,8 +15,8 @@ export default function Add_packages() {
   const [entry_date, setentry_date] = useState("");
   const [update_date, setupdate_date] = useState("");
   const [entry_by, setentry_by] = useState("");
-  const [img,setimg] = useState("")
-  const[formErrors,setFormErrors]=useState({})
+  const [img, setimg] = useState("");
+  const [formErrors, setFormErrors] = useState({});
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -80,39 +80,51 @@ export default function Add_packages() {
       errors.status = "status is required";
     }
     return errors;
-  }
+  };
   const submitbtn = async (e) => {
     e.preventDefault();
-    setFormErrors(validate())
+    setFormErrors(validate());
 
-    if(from_place && to_place && from_date && to_date && total_days && package_price && information && company_id && status){
-
+    if (
+      from_place &&
+      to_place &&
+      from_date &&
+      to_date &&
+      total_days &&
+      package_price &&
+      information &&
+      company_id &&
+      status
+    ) {
       const formdata = new FormData();
 
-      formdata.append("from_place",from_place);
-      formdata.append("to_place",to_place);
-      formdata.append("from_date",from_date);
-      formdata.append("to_date",to_date);
-      formdata.append("total_days",total_days);
-      formdata.append("package_price",package_price);
-      formdata.append("information",information);
-      formdata.append("company_id",company_id);
-      formdata.append("status",status);
-    
+      formdata.append("from_place", from_place);
+      formdata.append("to_place", to_place);
+      formdata.append("from_date", from_date);
+      formdata.append("to_date", to_date);
+      formdata.append("total_days", total_days);
+      formdata.append("package_price", package_price);
+      formdata.append("information", information);
+      formdata.append("company_id", company_id);
+      formdata.append("status", status);
+      formdata.append("img", img);
 
-    
-    let res = "";
-    if (id) {
-      res = await axios.put(
-        "http://localhost:1100/nodejs/package/" + id,
-        formdata
-      );
-    } else {
-      res = await axios.post("http://localhost:1100/nodejs/package",formdata);
+      let res = "";
+      if (id) {
+        res = await axios.put(
+          "http://localhost:1100/nodejs/package/" + id,
+          formdata
+        );
+      } else {
+        res = await axios.post(
+          "http://localhost:1100/nodejs/package",
+          formdata
+        );
+      }
+      alert(res.data);
+      navigate("/Tour_packages");
     }
-    alert(res.data);
-    navigate("/Tour_packages");
-  }}
+  };
   return (
     <main id="main" class="main">
       <div class="card">
@@ -129,7 +141,7 @@ export default function Add_packages() {
                   onChange={(e) => setfrom_place(e.target.value)}
                 />
                 <label for="floatingName">From Place</label>
-                <p style={{color: "red"}}>{formErrors.from_place}</p>
+                <p style={{ color: "red" }}>{formErrors.from_place}</p>
               </div>
             </div>
 
@@ -143,7 +155,7 @@ export default function Add_packages() {
                   onChange={(e) => setto_place(e.target.value)}
                 />
                 <label for="floatingPassword">To Place</label>
-                <p style={{color: "red"}}>{formErrors.to_place}</p>
+                <p style={{ color: "red" }}>{formErrors.to_place}</p>
               </div>
             </div>
 
@@ -158,7 +170,7 @@ export default function Add_packages() {
                     onChange={(e) => setfrom_date(e.target.value)}
                   />
                   <label for="floatingCity">From date</label>
-                  <p style={{color: "red"}}>{formErrors.from_date}</p>
+                  <p style={{ color: "red" }}>{formErrors.from_date}</p>
                 </div>
               </div>
             </div>
@@ -173,7 +185,7 @@ export default function Add_packages() {
                   onChange={(e) => setto_date(e.target.value)}
                 />
                 <label for="floatingZip">To date</label>
-                <p style={{color: "red"}}>{formErrors.to_date}</p>
+                <p style={{ color: "red" }}>{formErrors.to_date}</p>
               </div>
             </div>
 
@@ -187,7 +199,7 @@ export default function Add_packages() {
                   onChange={(e) => settotal_days(e.target.value)}
                 />
                 <label for="floatingZip">Total days</label>
-                <p style={{color: "red"}}>{formErrors.total_days}</p>
+                <p style={{ color: "red" }}>{formErrors.total_days}</p>
               </div>
             </div>
 
@@ -201,7 +213,7 @@ export default function Add_packages() {
                   onChange={(e) => setpackage_price(e.target.value)}
                 />
                 <label for="floatingZip">Package price</label>
-                <p style={{color: "red"}}>{formErrors.package_price}</p>
+                <p style={{ color: "red" }}>{formErrors.package_price}</p>
               </div>
             </div>
 
@@ -215,7 +227,7 @@ export default function Add_packages() {
                   onChange={(e) => setcompany_id(e.target.value)}
                 />
                 <label for="floatingZip">Company id</label>
-                <p style={{color: "red"}}>{formErrors.company_id}</p>
+                <p style={{ color: "red" }}>{formErrors.company_id}</p>
               </div>
             </div>
 
@@ -229,16 +241,21 @@ export default function Add_packages() {
                   onChange={(e) => setinformation(e.target.value)}
                 />
                 <label for="floatingZip">Information</label>
-                <p style={{color: "red"}}>{formErrors.information}</p>
+                <p style={{ color: "red" }}>{formErrors.information}</p>
               </div>
-            </div>        
+            </div>
             <div class="col-6">
-          <select name="status" id="status" class="form-control" onChange={(e)=>setstatus(e.target.value)} >
-              <option value="0">1.active</option>
-              <option value="0">2.inactive</option>          
-          </select>
-        </div>
-        <div class="col-12">
+              <select
+                name="status"
+                id="status"
+                class="form-control"
+                onChange={(e) => setstatus(e.target.value)}
+              >
+                <option value="0">1.active</option>
+                <option value="0">2.inactive</option>
+              </select>
+            </div>
+            <div class="col-12">
               <div class="form-floating">
                 <input
                   type="file"
