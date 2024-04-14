@@ -11,11 +11,11 @@ import multer from "multer";
 const router10 = express.Router();
 
 const storage = multer.diskStorage({
-  destination: (req, file, cb) => {
+  destination: function (req, file, cb) {
     cb(null, "./Upload");
   },
-  filename: (req, file, cb) => {
-    cb(null, file.originalname);
+  filename: function (req, file, cb) {
+    cb(null, file.originalname + Date.now());
   },
 });
 
@@ -24,9 +24,9 @@ const Upload = multer({
 });
 
 router10.get("/", getPackages);
-router10.get("/:id", Upload.single("img"), getPackage);
+router10.get("/:id", getPackage);
 router10.post("/", Upload.single("img"), insertPackage);
-router10.put("/:id", updatePackage);
+router10.put("/:id", Upload.single("img"), updatePackage);
 router10.delete("/:id", deletePackage);
 
 export default router10;

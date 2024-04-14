@@ -7,6 +7,7 @@ import About from "./components/About";
 import Blogs from "./components/Blogs";
 import Offers from "./components/Offers";
 import Contact from "./components/Contact";
+import Singletour from "./components/Singletour";
 
 const Layout = () => {
   return (
@@ -33,6 +34,7 @@ function App() {
             <Route path="/Blogs" element={<Blogs />} />
             <Route path="/Offers" element={<Offers />} />
             <Route path="/Contact" element={<Contact />} />
+            <Route path="/Singletour" element={<Singletour />} />
           </Routes>
           <Footer />
         </>

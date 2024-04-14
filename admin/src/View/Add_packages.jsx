@@ -12,9 +12,7 @@ export default function Add_packages() {
   const [information, setinformation] = useState("");
   const [company_id, setcompany_id] = useState("");
   const [status, setstatus] = useState("");
-  const [entry_date, setentry_date] = useState("");
-  const [update_date, setupdate_date] = useState("");
-  const [entry_by, setentry_by] = useState("");
+
   const [img, setimg] = useState("");
   const [formErrors, setFormErrors] = useState({});
 
@@ -44,9 +42,7 @@ export default function Add_packages() {
     setinformation(res.data.information);
     setcompany_id(res.data.company_id);
     setstatus(res.data.status);
-    setentry_date(res.data.entry_date);
-    setupdate_date(res.data.update_date);
-    setentry_by(res.data.entry_by);
+
     setimg(res.data.img);
   };
 
@@ -76,9 +72,9 @@ export default function Add_packages() {
     if (!company_id) {
       errors.company_id = "company_id is required";
     }
-    if (!status) {
-      errors.status = "status is required";
-    }
+    // if (!status) {
+    //   errors.status = "status is required";
+    // }
     return errors;
   };
   const submitbtn = async (e) => {
@@ -93,8 +89,8 @@ export default function Add_packages() {
       total_days &&
       package_price &&
       information &&
-      company_id &&
-      status
+      company_id
+      //  &&      status
     ) {
       const formdata = new FormData();
 
@@ -106,9 +102,8 @@ export default function Add_packages() {
       formdata.append("package_price", package_price);
       formdata.append("information", information);
       formdata.append("company_id", company_id);
-      formdata.append("status", status);
       formdata.append("img", img);
-
+      // formdata.append("status", status);
       let res = "";
       if (id) {
         res = await axios.put(
@@ -244,7 +239,22 @@ export default function Add_packages() {
                 <p style={{ color: "red" }}>{formErrors.information}</p>
               </div>
             </div>
-            <div class="col-6">
+
+            <div class="col-4">
+              <div class="form-floating">
+                <input
+                  type="file"
+                  class="form-control"
+                  placeholder="Company id"
+                  // defaultValue={company_id}
+                  onChange={(e) => setimg(e.target.files[0])}
+                />
+                <label for="floatingZip">Image</label>
+                {/* <p style={{ color: "red" }}>{formErrors.company_id}</p> */}
+              </div>
+            </div>
+
+            {/* <div class="col-6">
               <select
                 name="status"
                 id="status"
@@ -254,56 +264,7 @@ export default function Add_packages() {
                 <option value="0">1.active</option>
                 <option value="0">2.inactive</option>
               </select>
-            </div>
-            <div class="col-12">
-              <div class="form-floating">
-                <input
-                  type="file"
-                  class="form-control"
-                  placeholder="To Place"
-                  onChange={(e) => setimg(e.target.files[0])}
-                />
-                <label for="floatingPassword">Image</label>
-              </div>
-            </div>
-            <div class="col-6">
-              <div class="form-floating">
-                <input
-                  type="date"
-                  class="form-control"
-                  placeholder="Entry Date"
-                  defaultValue={entry_date}
-                  onChange={(e) => setentry_date(e.target.value)}
-                />
-                <label for="floatingZip">Entry Date</label>
-              </div>
-            </div>
-
-            <div class="col-6">
-              <div class="form-floating">
-                <input
-                  type="date"
-                  class="form-control"
-                  placeholder="Update date"
-                  defaultValue={update_date}
-                  onChange={(e) => setupdate_date(e.target.value)}
-                />
-                <label for="floatingZip">Update date</label>
-              </div>
-            </div>
-
-            <div class="col-6">
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Entry by"
-                  defaultValue={entry_by}
-                  onChange={(e) => setentry_by(e.target.value)}
-                />
-                <label for="floatingZip">Entry by</label>
-              </div>
-            </div>
+            </div> */}
 
             <div class="text-center">
               <button type="submit" class="btn btn-primary" onClick={submitbtn}>

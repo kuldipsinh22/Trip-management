@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import axios from "axios";
 
 export default function () {
-  const [contact_us,setcontact_us] = useState([]);
+  const [contact_us, setcontact_us] = useState([]);
   let i = 1;
   useEffect(() => {
     getContact();
@@ -18,7 +18,9 @@ export default function () {
   const deletecontact = async (id) => {
     let ans = window.confirm("Are you sure??");
     if (ans) {
-      const res = await axios.delete("http://localhost:1100/nodejs/contact/" + id);
+      const res = await axios.delete(
+        "http://localhost:1100/nodejs/contact/" + id
+      );
       alert(res.data);
       getContact();
     }
@@ -43,31 +45,34 @@ export default function () {
               <tbody>
                 {contact_us.map((contact_us) => (
                   <tr>
-                 <th scope="row">{i++}</th>
-                  <td>{contact_us.email1}</td>
-                  <td>{contact_us.email2}</td>
-                  <td>{contact_us.phone_no1}</td>
-                  <td>{contact_us.phone_no2}</td>
+                    <th scope="row">{i++}</th>
+                    <td>{contact_us.email1}</td>
+                    <td>{contact_us.email2}</td>
+                    <td>{contact_us.phone_no1}</td>
+                    <td>{contact_us.phone_no2}</td>
 
-                  <td>
-                    <button class="button-62" role="button">
-                    <Link to={`/Add_contact/` + contact_us.contact_id}>
+                    <td>
+                      <button class="button-39" role="button">
+                        <Link to={`/Add_contact/` + contact_us.contact_id}>
                           Edit
-                    </Link>
-                    </button>
-                    &nbsp; &nbsp; &nbsp;
-                    <button class="button-63" role="button" onClick={() => deletecontact(contact_us.contact_id)}>
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
+                        </Link>
+                      </button>
+                      &nbsp; &nbsp; &nbsp;
+                      <button
+                        class="button-40"
+                        role="button"
+                        onClick={() => deletecontact(contact_us.contact_id)}
+                      >
+                        DELETE
+                      </button>
+                    </td>
+                  </tr>
                 ))}
-                
               </tbody>
             </table>
           </div>
         </div>
-    </main> 
+      </main>
     </>
-  )
+  );
 }

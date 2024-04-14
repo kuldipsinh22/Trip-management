@@ -4,6 +4,7 @@ import axios from "axios";
 
 export default function Offers() {
   const [packages, setPackages] = useState([]);
+  const [formErrors, setFormErrors] = useState({});
   let i = 1;
   useEffect(() => {
     getPackages();
@@ -28,11 +29,12 @@ export default function Offers() {
         </div>
       </div>
       {/* Offers */}
-
       <div className="offers">
         {/* Offers */}
         <div className="container">
           <div className="row">
+            <div className="col-lg-1 temp_col" />
+            <div className="col-lg-11"></div>
             <div className="col-lg-12">
               {/* Offers Grid */}
               <div className="offers_grid">
@@ -43,14 +45,26 @@ export default function Offers() {
                       <div className="col-lg-1 temp_col" />
                       <div className="col-lg-3 col-1680-4">
                         <div className="offers_image_container">
-                          <div className="offers_image_background">
+                          {/* Image by https://unsplash.com/@kensuarez */}
+                          <div
+                            className="offers_image_background"
+                            // style={{
+                            //   backgroundImage: "url(images/offer_1.jpg)",
+                            // }}
+                          >
                             <img
-                              src={`http://localhost:1100/upload/${packages.img}`}
+                              alt=""
+                              src={`http://localhost:1100/Upload/${packages.img}`}
+                              style={{
+                                objectFit: "cover",
+                                height: "80%",
+                                width: "100%",
+                              }}
                             />
                           </div>
                           <div className="offer_name">
                             <a href="single_listing.html">
-                              {packages.from_place}
+                              {packages.to_place}
                             </a>
                           </div>
                         </div>
@@ -58,38 +72,15 @@ export default function Offers() {
                       <div className="col-lg-8">
                         <div className="offers_content">
                           <div className="offers_price">
-                            $70<span>per night</span>
+                            Rs. {packages.package_price}
+                            <span>{packages.total_days}</span>
                           </div>
-                          <div
-                            className="rating_r rating_r_4 offers_rating"
-                            data-rating={4}
-                          >
-                            <i />
-                            <i />
-                            <i />
-                            <i />
-                            <i />
-                          </div>
-                          <p className="offers_text">
-                            Suspendisse potenti. In faucibus massa. Lorem ipsum
-                            dolor sit amet, consectetur adipiscing elit. Nullam
-                            eu convallis tortor. Lorem ipsum dolor sit amet.
-                          </p>
-                          <div className="offers_icons">
-                            <ul className="offers_icons_list">
-                              <li className="offers_icons_item">
-                                <img src="images/post.png" alt="" />
-                              </li>
-                              <li className="offers_icons_item">
-                                <img src="images/compass.png" alt="" />
-                              </li>
-                              <li className="offers_icons_item">
-                                <img src="images/bicycle.png" alt="" />
-                              </li>
-                              <li className="offers_icons_item">
-                                <img src="images/sailboat.png" alt="" />
-                              </li>
-                            </ul>
+
+                          <p className="offers_text">{packages.information}</p>
+                          <br />
+                          <div className="dates">
+                            <p>From date - {packages.from_date}</p>
+                            <p>To date - {packages.to_date}</p>
                           </div>
                           <div className="button book_button">
                             <a href="#">
@@ -98,19 +89,6 @@ export default function Offers() {
                               <span />
                               <span />
                             </a>
-                          </div>
-                          <div className="offer_reviews">
-                            <div className="offer_reviews_content">
-                              <div className="offer_reviews_title">
-                                very good
-                              </div>
-                              <div className="offer_reviews_subtitle">
-                                100 reviews
-                              </div>
-                            </div>
-                            <div className="offer_reviews_rating text-center">
-                              8.1
-                            </div>
                           </div>
                         </div>
                       </div>

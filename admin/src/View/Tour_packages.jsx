@@ -10,8 +10,6 @@ export default function Tour_packages() {
     getPackages();
   }, []);
 
-
-
   const getPackages = async () => {
     const res = await axios.get("http://localhost:1100/nodejs/package");
     setPackages(res.data);
@@ -55,11 +53,18 @@ export default function Tour_packages() {
                 {packages.map((packages) => (
                   <tr>
                     <th scope="row">{i++}</th>
-                    <td>{packages.from_place}</td>
+                    <td>{packages.to_place}</td>
                     <td>{packages.from_date}</td>
                     <td>{packages.total_days}</td>
                     <td>{packages.package_price}</td>
-                    <td><img src={`http://localhost:1100/upload/${packages.img}`} height={100} width={100} /></td>
+                    <td>
+                      <img
+                        src={`http://localhost:1100/upload/${packages.img}`}
+                        height={100}
+                        width={100}
+                        style={{ objectFit: "cover" }}
+                      />
+                    </td>
 
                     <td>
                       <button class="button-39" role="button">
