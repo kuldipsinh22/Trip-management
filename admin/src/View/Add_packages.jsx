@@ -72,9 +72,9 @@ export default function Add_packages() {
     if (!company_id) {
       errors.company_id = "company_id is required";
     }
-    // if (!status) {
-    //   errors.status = "status is required";
-    // }
+    if (!status) {
+      errors.status = "status is required";
+    }
     return errors;
   };
   const submitbtn = async (e) => {
@@ -89,8 +89,8 @@ export default function Add_packages() {
       total_days &&
       package_price &&
       information &&
-      company_id
-      //  &&      status
+      company_id &&
+      status
     ) {
       const formdata = new FormData();
 
@@ -103,7 +103,7 @@ export default function Add_packages() {
       formdata.append("information", information);
       formdata.append("company_id", company_id);
       formdata.append("img", img);
-      // formdata.append("status", status);
+      formdata.append("status", status);
       let res = "";
       if (id) {
         res = await axios.put(
@@ -254,17 +254,18 @@ export default function Add_packages() {
               </div>
             </div>
 
-            {/* <div class="col-6">
+            <div class="col-6">
               <select
                 name="status"
                 id="status"
                 class="form-control"
                 onChange={(e) => setstatus(e.target.value)}
               >
-                <option value="0">1.active</option>
-                <option value="0">2.inactive</option>
+                <option>Select</option>
+                <option value="1">1.active</option>
+                <option value="2">2.inactive</option>
               </select>
-            </div> */}
+            </div>
 
             <div class="text-center">
               <button type="submit" class="btn btn-primary" onClick={submitbtn}>

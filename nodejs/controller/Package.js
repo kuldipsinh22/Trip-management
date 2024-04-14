@@ -21,7 +21,7 @@ export const getPackage = (req, res) => {
 
 export const insertPackage = (req, res) => {
   const query =
-    "INSERT INTO `tour_packages`(`from_place`, `to_place`, `from_date`, `to_date`, `total_days`, `package_price`, `information`, `company_id`, `img`) VALUES(?)";
+    "INSERT INTO `tour_packages`(`from_place`, `to_place`, `from_date`, `to_date`, `total_days`, `package_price`, `information`, `company_id`, `status`,`img`) VALUES(?)";
   const values = [
     req.body.from_place,
     req.body.to_place,
@@ -31,7 +31,7 @@ export const insertPackage = (req, res) => {
     req.body.package_price,
     req.body.information,
     req.body.company_id,
-    // req.body.status,
+    req.body.status,
     // req.body.role,
 
     req.file?.filename,
@@ -46,7 +46,7 @@ export const insertPackage = (req, res) => {
 
 export const updatePackage = (req, res) => {
   const query =
-    "UPDATE `tour_packages` SET `from_place`=?,`to_place`=?,`from_date`=?,`to_date`=?,`total_days`=?,`package_price`=?,`information`=?,`company_id`=?, `img`=? WHERE package_id=?";
+    "UPDATE `tour_packages` SET `from_place`=?,`to_place`=?,`from_date`=?,`to_date`=?,`total_days`=?,`package_price`=?,`information`=?,`company_id`=?, `status`=?,`img`=? WHERE package_id=?";
   const values = [
     req.body.from_place,
     req.body.to_place,
@@ -56,6 +56,7 @@ export const updatePackage = (req, res) => {
     req.body.package_price,
     req.body.information,
     req.body.company_id,
+    req.body.status,
     // req.body.role,
 
     req.file?.filename || req.body.img,
