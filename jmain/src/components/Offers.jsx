@@ -73,7 +73,10 @@ export default function Offers() {
                         <div className="offers_content">
                           <div className="offers_price">
                             Rs. {packages.package_price}
-                            <span>{packages.total_days}</span>
+                            <span>
+                              Days {packages.total_days} Nights{" "}
+                              {packages.total_days - 1}
+                            </span>
                           </div>
 
                           <p className="offers_text">{packages.information}</p>
@@ -83,12 +86,12 @@ export default function Offers() {
                             <p>To date - {packages.to_date}</p>
                           </div>
                           <div className="button book_button">
-                            <a href="#">
+                            <Link to={"/Singletour/" + packages.package_id}>
                               book
                               <span />
                               <span />
                               <span />
-                            </a>
+                            </Link>
                           </div>
                         </div>
                       </div>

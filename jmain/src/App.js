@@ -34,7 +34,7 @@ function App() {
             <Route path="/Blogs" element={<Blogs />} />
             <Route path="/Offers" element={<Offers />} />
             <Route path="/Contact" element={<Contact />} />
-            <Route path="/Singletour" element={<Singletour />} />
+            <Route path="/Singletour/:id" element={<Singletour />} />
           </Routes>
           <Footer />
         </>
