@@ -7,28 +7,6 @@ export default function Login() {
   const [error, setError] = useState("");
   const [role_id, setRole] = useState(0);
 
-  // const submitHandle = async (e) => {
-  //   e.preventDefault();
-  //   try {
-  //     const res = await axios.get("http://localhost:1100/nodejs/login", {
-  //       params: {
-  //         admin_name: admin_name,
-  //         password: password,
-  //       },
-  //     });
-  //     //   setUser1(res.data)
-
-  //     if (res.data > 0) {
-  //       setError("");
-  //       sessionStorage.setItem("admin", res.data);
-
-  //       window.location.reload();
-  //     } else {
-  //       setError("Invalid UserId/Password");
-  //     }
-  //   } catch (error) {}
-  // };
-
   const submitHandle = async (e) => {
     e.preventDefault();
     //alert(role_id);
@@ -54,50 +32,6 @@ export default function Login() {
   };
   return (
     <>
-      {/* <main id="main" class="main">
-      <select
-          name="cars"
-          id="cars"
-          class="form-control"
-          onChange={(e) => setRole(e.target.value)}
-        >
-          <option value="0">Select Role</option>
-          <option value="1">Admin</option>
-          <option value="2">Company</option>
-        </select>
-        <div class="col-12">
-          <label for="inputNanme4" class="form-label">
-            Phone no.
-          </label>
-          <input
-            type="text"
-            class="form-control"
-            id="inputNanme4"
-            onChange={(e) => setContact(e.target.value)}
-          />
-        </div>
-        <div class="col-12">
-          <label for="inputEmail4" class="form-label">
-            Your Password
-          </label>
-          <input
-            type="email"
-            class="form-control"
-            id="inputEmail4"
-            onChange={(e) => setpassword(e.target.value)}
-          />
-        </div>
-        <div class="col-12">
-          <button
-            type="submit"
-            className="btn btn-primary"
-            onClick={submitHandle}
-          >
-            Login
-          </button>
-          <p style={{ color: "red" }}>{error}</p>
-        </div>
-      </main> */}
       <main>
         <div class="container">
           <section class="section register min-vh-100 d-flex flex-column align-items-center justify-content-center py-4">

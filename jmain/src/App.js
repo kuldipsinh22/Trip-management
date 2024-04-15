@@ -8,6 +8,7 @@ import Blogs from "./components/Blogs";
 import Offers from "./components/Offers";
 import Contact from "./components/Contact";
 import Singletour from "./components/Singletour";
+import Login from "./components/Login";
 
 const Layout = () => {
   return (
@@ -19,25 +20,34 @@ const Layout = () => {
 };
 
 function App() {
-  // const [auth, setAuth] = useState(sessionStorage.getItem("user"));
+  const [auth, setAuth] = useState(sessionStorage.getItem("user"));
   // const [role_id, setRole] = useState(sessionStorage.getItem("role"));
 
   return (
     <>
       <BrowserRouter>
-        <>
-          <Layout />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/Home" element={<Home />} />
-            <Route path="/About" element={<About />} />
-            <Route path="/Blogs" element={<Blogs />} />
-            <Route path="/Offers" element={<Offers />} />
-            <Route path="/Contact" element={<Contact />} />
-            <Route path="/Singletour/:id" element={<Singletour />} />
-          </Routes>
-          <Footer />
-        </>
+        {auth ? (
+          <>
+            <Layout />
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/Home" element={<Home />} />
+              <Route path="/About" element={<About />} />
+              <Route path="/Blogs" element={<Blogs />} />
+              <Route path="/Offers" element={<Offers />} />
+              <Route path="/Contact" element={<Contact />} />
+              <Route path="/Singletour/:id" element={<Singletour />} />
+              <Route path="/Login" element={<Login />} />
+            </Routes>
+            <Footer />
+          </>
+        ) : (
+          <>
+            <Routes>
+              <Route path="/" element={<Login />} />
+            </Routes>
+          </>
+        )}
       </BrowserRouter>
     </>
   );

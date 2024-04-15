@@ -1,10 +1,8 @@
 import express from "express";
-import{
-    getAdmin
-} from '../controller/Login.js'
+import { getAdmin } from "../controller/Login.js";
 
-const router11=express.Router()
+const router11 = express.Router();
 
-router11.get("/",getAdmin)
+router11.get("/", getAdmin);
 
-export default router11
+export default router11;
