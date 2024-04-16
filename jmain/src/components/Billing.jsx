@@ -18,6 +18,8 @@ export default function Billing() {
   const [company_email2, setcompany_email2] = useState("");
   const [contact1, setcontact1] = useState("");
   const [contact2, setcontact2] = useState("");
+  const [price, setprice] = useState("");
+  const [adv_payment, setadv_payment] = useState("");
 
   const [img, setimg] = useState("");
   const [formErrors, setFormErrors] = useState({});
@@ -55,6 +57,15 @@ export default function Billing() {
     setcompany_email2(res.data.company_email2);
     setcontact1(res.data.contact1);
     setcontact2(res.data.contact2);
+  };
+
+  const getBill = async () => {
+    const url = "http://localhost:1100/nodejs/bill/";
+    console.log(url);
+    const res = await axios.get(url);
+    console.log(res.data);
+    setprice(res.data.price);
+    setadv_payment(res.data.adv_payment);
   };
 
   return (
@@ -116,8 +127,6 @@ export default function Billing() {
         <div style={{ marginTop: "40px" }}>
           <h2>Additional Details</h2>
           <p>
-            <strong>Number of Participants:</strong> 10
-            <br />
             <strong>Accommodation:</strong> 4-star Hotel
             <br />
             <strong>Meals:</strong> Included
@@ -125,8 +134,8 @@ export default function Billing() {
             <strong>Additional Services:</strong> None
           </p>
         </div>
-
-        <div style={{ marginTop: "40px" }}>
+        <h2>Payment status - paid</h2>
+        {/* <div style={{ marginTop: "40px" }}>
           <h2>Total Amount</h2>
           <p>
             <strong>Subtotal:</strong> $1000
@@ -135,7 +144,7 @@ export default function Billing() {
             <br />
             <strong>Total:</strong> $1200
           </p>
-        </div>
+        </div> */}
       </div>
     </>
   );

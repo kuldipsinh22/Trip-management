@@ -14,6 +14,9 @@ export default function Singletour() {
   const [status, setstatus] = useState("");
   const [total_person, settotal_person] = useState("");
   const [img, setimg] = useState("");
+  const [adv_payment, setadv_payment] = useState("");
+  const [auth, setAuth] = useState(sessionStorage.getItem("user"));
+
   const [formErrors, setFormErrors] = useState({});
 
   const location = useLocation();
@@ -44,20 +47,34 @@ export default function Singletour() {
     setstatus(res.data.status);
     setimg(res.data.img);
   };
+  const [totalPerson, setTotalPerson] = useState("");
+  const handleTotalPersonChange = (event) => {
+    const selectedOption = event.target.value;
+    const calculatedPrice = package_price * selectedOption;
+    setTotalPerson(calculatedPrice);
+  };
 
   const submitbtn = async (e) => {
     e.preventDefault();
 
     const formdata = new FormData();
 
+    formdata.append("user_id", auth);
+    formdata.append("company_id", company_id);
+    formdata.append("package_id", id);
     formdata.append("total_person", total_person);
+    formdata.append("adv_payment", adv_payment);
 
     const data = {
+      user_id: auth,
+      company_id: company_id,
+      package_id: id,
       total_person,
+      adv_payment,
     };
     let res = "";
 
-    res = await axios.post("http://localhost:1100/nodejs/bill", data);
+    res = await axios.post("http://localhost:1100/nodejs/booking", data);
 
     alert(res.data);
     navigate("/Billing/" + id);
@@ -200,7 +217,10 @@ export default function Singletour() {
                           color: "#31124B",
                           id: "total",
                         }}
-                        onChange={(e) => settotal_person(e.target.value)}
+                        onChange={(e) => {
+                          const value = e.target.value;
+                          settotal_person(value);
+                        }}
                       >
                         <option>Select</option>
                         <option value="1">One</option>
@@ -210,17 +230,33 @@ export default function Singletour() {
                         <option value="5">Five</option>
                       </select>
 
-                      {/* <Link
-                        to={"/Billing/" + id}
-                        class="button-48"
-                        role="button"
-                        style={{ marginTop: 20 }}
-                      > */}
+                      <div
+                        style={{
+                          marginBottom: 5,
+                          color: "black",
+                          marginTop: 10,
+                        }}
+                      >
+                        Your Total Price
+                      </div>
+                      <input
+                        style={{
+                          width: "100%",
+                          padding: 8,
+                          borderRadius: 5,
+                          border: "1px solid purple",
+                          color: "#31124B",
+                          id: "total",
+                        }}
+                        value={package_price * total_person}
+                        onChange={(e) => setadv_payment(e.target.value)}
+                      />
+
                       <button
                         to={"/Billing/" + id}
                         class="button-48"
                         role="button"
-                        style={{ marginTop: 20 }}
+                        style={{ marginTop: 20, marginLeft: 130 }}
                         onClick={submitbtn}
                       >
                         <span
