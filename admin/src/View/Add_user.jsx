@@ -10,10 +10,8 @@ export default function Add_user() {
   const [user_country, setuser_country] = useState("");
   const [user_password, setuser_password] = useState("");
   const [status, setstatus] = useState("");
-  const [entry_date, setentry_date] = useState("");
-  const [update_date, setupdate_date] = useState("");
-  const [entry_by, setentry_by] = useState("");
-  const[formErrors,setFormErrors]=useState({})
+  const [img, setimg] = useState("");
+  const [formErrors, setFormErrors] = useState({});
 
   const location = useLocation();
   const navigate = useNavigate();
@@ -39,9 +37,7 @@ export default function Add_user() {
     setuser_country(res.data.user_country);
     setuser_password(res.data.user_password);
     setstatus(res.data.status);
-    setentry_date(res.data.entry_date);
-    setupdate_date(res.data.update_date);
-    setentry_by(res.data.entry_by);
+    setimg(res.data.img);
   };
 
   const validate = () => {
@@ -68,48 +64,44 @@ export default function Add_user() {
       errors.status = "status is required";
     }
     return errors;
-  }
+  };
 
   const submitbtn = async (e) => {
     e.preventDefault();
     setFormErrors(validate());
 
-    if (user_name && user_email && user_contact && user_dob && user_country && user_password && status) {
-      
+    if (
+      user_name &&
+      user_email &&
+      user_contact &&
+      user_dob &&
+      user_country &&
+      user_password &&
+      status
+    ) {
       const formdata = new FormData();
 
-      formdata.append("user_name",user_name);
-      formdata.append("user_email",user_email);
-      formdata.append("user_contact",user_contact);
-      formdata.append("user_dob",user_dob);
-      formdata.append("user_country",user_country);
-      formdata.append("user_password",user_password);
-      formdata.append("status",status);
-    }
+      formdata.append("user_name", user_name);
+      formdata.append("user_email", user_email);
+      formdata.append("user_contact", user_contact);
+      formdata.append("user_dob", user_dob);
+      formdata.append("user_country", user_country);
+      formdata.append("user_password", user_password);
+      formdata.append("status", status);
+      formdata.append("img", img);
 
-    const data = {
-      user_name,
-      user_email,
-      user_contact,
-      user_dob,
-      user_country,
-      user_password,
-      status,
-      entry_date,
-      update_date,
-      entry_by
-    };
-    let res = "";
-    if (id) {
-      res = await axios.put(
-        "http://localhost:1100/nodejs/user/" + id,
-        data
-      );
-    } else {
-      res = await axios.post("http://localhost:1100/nodejs/user", data);
+      let res = "";
+      if (id) {
+        res = await axios.put(
+          "http://localhost:1100/nodejs/user/" + id,
+          formdata
+        );
+      } else {
+        res = await axios.post("http://localhost:1100/nodejs/user", formdata);
+      }
+      alert(res.data);
+      navigate("/User");
     }
-    alert(res.data);
-    navigate("/User");
   };
   return (
     <main id="main" class="main">
@@ -127,7 +119,7 @@ export default function Add_user() {
                   onChange={(e) => setuser_name(e.target.value)}
                 />
                 <label for="floatingName">Name</label>
-                <p style={{color:"red"}}>{formErrors.user_name}</p>
+                <p style={{ color: "red" }}>{formErrors.user_name}</p>
               </div>
             </div>
 
@@ -141,7 +133,18 @@ export default function Add_user() {
                   onChange={(e) => setuser_email(e.target.value)}
                 />
                 <label for="floatingPassword">User Email</label>
-                <p style={{color:"red"}}>{formErrors.user_email}</p>
+                <p style={{ color: "red" }}>{formErrors.user_email}</p>
+              </div>
+            </div>
+
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input
+                  type="file"
+                  class="form-control"
+                  onChange={(e) => setimg(e.target.files[0])}
+                />
+                <label for="floatingPassword">Profile Image</label>
               </div>
             </div>
 
@@ -156,7 +159,7 @@ export default function Add_user() {
                     onChange={(e) => setuser_contact(e.target.value)}
                   />
                   <label for="floatingCity">Contact</label>
-                  <p style={{color:"red"}}>{formErrors.user_contact}</p>
+                  <p style={{ color: "red" }}>{formErrors.user_contact}</p>
                 </div>
               </div>
             </div>
@@ -171,7 +174,7 @@ export default function Add_user() {
                   onChange={(e) => setuser_dob(e.target.value)}
                 />
                 <label for="floatingZip">DOB</label>
-                <p style={{color:"red"}}>{formErrors.user_dob}</p>
+                <p style={{ color: "red" }}>{formErrors.user_dob}</p>
               </div>
             </div>
 
@@ -185,7 +188,7 @@ export default function Add_user() {
                   onChange={(e) => setuser_country(e.target.value)}
                 />
                 <label for="floatingZip">Country</label>
-                <p style={{color:"red"}}>{formErrors.user_country}</p>
+                <p style={{ color: "red" }}>{formErrors.user_country}</p>
               </div>
             </div>
 
@@ -195,56 +198,23 @@ export default function Add_user() {
                   type="Password"
                   class="form-control"
                   placeholder="Password"
+                  defaultValue={user_password}
                   onChange={(e) => setuser_password(e.target.value)}
                 />
                 <label for="floatingZip">Password</label>
-                <p style={{color:"red"}}>{formErrors.user_password}</p>
+                <p style={{ color: "red" }}>{formErrors.user_password}</p>
               </div>
             </div>
             <div class="col-6">
-          <select name="status" id="status" class="form-control" onChange={(e) => setstatus(e.target.value)} >
-              <option value="0">1.active</option>
-              <option value="0">2.inactive</option>          
-          </select>
-        </div>
-
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input
-                  type="date"
-                  class="form-control"
-                  placeholder="Entry Date"
-                  defaultValue={entry_date}
-                  onChange={(e) => setentry_date(e.target.value)}
-                />
-                <label for="floatingZip">Entry Date</label>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input
-                  type="date"
-                  class="form-control"
-                  placeholder="Update date"
-                  defaultValue={update_date}
-                  onChange={(e) => setupdate_date(e.target.value)}
-                />
-                <label for="floatingZip">Update date</label>
-              </div>
-            </div>
-
-            <div class="col-md-6">
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Entry by"
-                  defaultValue={entry_by}
-                  onChange={(e) => setentry_by(e.target.value)}
-                />
-                <label for="floatingZip">Entry by</label>
-              </div>
+              <select
+                name="status"
+                id="status"
+                class="form-control"
+                onChange={(e) => setstatus(e.target.value)}
+              >
+                <option value="0">1.active</option>
+                <option value="0">2.inactive</option>
+              </select>
             </div>
 
             <div class="text-center">

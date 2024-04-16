@@ -10,6 +10,7 @@ import Contact from "./components/Contact";
 import Singletour from "./components/Singletour";
 import Login from "./components/Login";
 import Billing from "./components/Billing";
+import Profile from "./components/Profile";
 
 const Layout = () => {
   return (
@@ -39,6 +40,7 @@ function App() {
               <Route path="/Contact" element={<Contact />} />
               <Route path="/Singletour/:id" element={<Singletour />} />
               <Route path="/Billing/:id" element={<Billing />} />
+              <Route path="/Profile/:id" element={<Profile />} />
             </Routes>
             <Footer />
           </>

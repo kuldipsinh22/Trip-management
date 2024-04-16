@@ -1,14 +1,10 @@
 import { db } from "../db.js";
 
 export const getBookings = (req, res) => {
-  // const query="SELECT a.*,b.user_name FROM manage_bookings a, user b WHERE a.user_id=b.user_id";
-  const query = `SELECT * from manage_bookings`;
-  db.query(query, (err, data) => {
-    if (err) {
-      return res.json(err);
-    } else {
-      return res.json(data);
-    }
+  const query = "SELECT * from manage_bookings where user_id=?";
+  db.query(query, [req.params.id], (err, data) => {
+    if (err) return res.json(err);
+    return res.json(data);
   });
 };
 

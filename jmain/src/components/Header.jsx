@@ -1,7 +1,25 @@
-import React from "react";
+import axios from "axios";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
 export default function Header() {
+  const [img, setimg] = useState("");
+  const [auth, setAuth] = useState(sessionStorage.getItem("user"));
+
+  const getUser = async () => {
+    const url = "http://localhost:1100/nodejs/user/" + auth;
+    console.log(url);
+    const res = await axios.get(url);
+    console.log(res.data);
+    setimg(res.data.img);
+  };
+
+  useEffect(() => {
+    console.log(auth);
+    if (auth) {
+      getUser();
+    }
+  }, []);
   return (
     <>
       <header className="header">
@@ -74,21 +92,6 @@ export default function Header() {
                   className="main_nav_container"
                   style={{ marginLeft: "200px" }}
                 >
-                  {/* <li className="menu_item">
-                  <Link to={"/Home"}>Home</Link>
-                </li> */}
-                  {/* <li className="menu_item">
-                  <Link to={"/About"}>About Us</Link>
-                </li>
-                <li className="menu_item">
-                  <Link to={"/Offers"}>Offers</Link>
-                </li>
-                <li className="menu_item">
-                  <Link to={"/News"}>News</Link>
-                </li>
-                <li className="menu_item">
-                  <Link to={"/Contact"}>Contact</Link>
-                </li> */}
                   <ul className="main_nav_list">
                     <li className="main_nav_item">
                       <Link to="/Home">Home</Link>
@@ -106,6 +109,21 @@ export default function Header() {
                       <Link to="/Contact">contact</Link>
                     </li>
                   </ul>
+                </div>
+                <div>
+                  <Link to={`/Profile/` + auth}>
+                    <img
+                      src={`http://localhost:1100/upload/${img}`}
+                      alt=""
+                      style={{
+                        width: "50px",
+                        height: "50px",
+                        borderRadius: "50%",
+                        objectFit: "cover",
+                        // backgroundColor: "blue",
+                      }}
+                    />
+                  </Link>
                 </div>
 
                 <div className="hamburger">
