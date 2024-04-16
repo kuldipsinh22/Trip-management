@@ -1,7 +1,8 @@
 import { db } from "../db.js";
 
 export const getPackages = (req, res) => {
-  const query = `SELECT * FROM tour_packages`;
+  const query =
+    "SELECT a.*, b.* FROM tour_packages a, company b WHERE a.company_id = b.company_id";
   db.query(query, (err, data) => {
     if (err) {
       return res.json(err);
@@ -12,7 +13,8 @@ export const getPackages = (req, res) => {
 };
 
 export const getPackage = (req, res) => {
-  const query = "SELECT * FROM `tour_packages` WHERE package_id=?";
+  const query =
+    "SELECT a.*, b.* FROM tour_packages a, company b WHERE package_id=? and a.company_id = b.company_id";
   db.query(query, [req.params.id], (err, data) => {
     if (err) return res.json(err);
     return res.json(data[0]);

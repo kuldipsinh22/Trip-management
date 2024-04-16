@@ -3,9 +3,9 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Mar 18, 2024 at 07:30 AM
--- Server version: 10.4.28-MariaDB
--- PHP Version: 8.0.28
+-- Generation Time: Apr 16, 2024 at 07:43 AM
+-- Server version: 10.4.32-MariaDB
+-- PHP Version: 8.2.12
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 START TRANSACTION;
@@ -68,8 +68,7 @@ CREATE TABLE `admin` (
 --
 
 INSERT INTO `admin` (`admin_id`, `admin_name`, `role`, `admin_email`, `contact1`, `status`, `entry_date`, `update_date`, `entry_by`, `image`, `password`) VALUES
-(1, 'khushi', 1, 'khush@gmail.com', '1234567890', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '', '123'),
-(3, 'test', 1, 'test@test.com', '1111111111', 1, '2023-10-04 07:50:17', NULL, 0, '', '111');
+(1, 'khushi', 1, 'khush@gmail.com', '1111111111', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, '', '123');
 
 -- --------------------------------------------------------
 
@@ -241,7 +240,6 @@ CREATE TABLE `tour_packages` (
   `package_price` varchar(10) NOT NULL COMMENT 'add packages price',
   `information` text NOT NULL COMMENT 'add information',
   `company_id` bigint(100) NOT NULL COMMENT 'store company id',
-  `role` int(4) NOT NULL COMMENT 'add role 1.admin 2.company',
   `entry_date` datetime NOT NULL COMMENT 'add insert record date',
   `update_date` datetime NOT NULL COMMENT 'add update record date',
   `entry_by` bigint(20) NOT NULL COMMENT 'store role id',
@@ -252,14 +250,9 @@ CREATE TABLE `tour_packages` (
 -- Dumping data for table `tour_packages`
 --
 
-INSERT INTO `tour_packages` (`package_id`, `from_place`, `to_place`, `from_date`, `to_date`, `status`, `total_days`, `package_price`, `information`, `company_id`, `role`, `entry_date`, `update_date`, `entry_by`, `img`) VALUES
-(8, 'kedarnath', 'bhavnagar', '2023-09-12', '2023-09-20', 1, '8', '20000', 'Legend has it that the original Pandavas built the temple of Kedarnath and the present temple was established by Adi Shankaracharya, who restored the glory of the shrine in the 8th century.\n                   The temple is said to be more than 1,200 years old and one among the 12 jyotilingas in india.The best time to visit Kedarnath is the summer season,from April to June.\n                   You can also plan Kedarnath Yatra during the pre-winter months,September-October.This sacred Dham or temple remains closed from November-March(Winter)due to extreme cold and heavy snowfal.', 2, 2, '2023-09-12 00:00:00', '2023-09-13 00:00:00', 0, ''),
-(10, 'Saputara', 'bhavnagar', '2023-09-27', '2023-09-29', 1, '3', '3000', 'Saputara hill station is situted in the district of Dang.After the very first rain of the season,the whole area come out full of greenery, frequent waterfalls and gushing streams.The city has been developed as a Hill station by the government and is a favourite place of tourists all the way coming from Gujarat ,Nashik and Bombay.Many museums are here showing the culture of the Dang.', 2, 0, '2023-09-27 18:30:00', '0000-00-00 00:00:00', 0, ''),
-(11, 'Kutch', 'bhavnagar', '2023-10-01', '2023-10-04', 1, '4', '7000', 'One of the Most Famous Tourist Attraction of Gujrat.\n                   White Rann of kutch is one of the most tourist attraction of Gujrat.\n                   Kala Dungar is also a magnificent place to view the desert significantly.\n                   The Mandvi Beach is a stretch of golden brown sand located at the southernmost point of Gujrat\'s Kutch district.\n                   Aaina Mahal,Vijay Villas Palace,Shree Swaminarayan Temple Bhuj,Parag Mahal,Narayan Sarovar,Bhujio Hill,Anjar most tourist attraction of Kutch.', 1, 0, '2023-10-01 00:00:00', '0000-00-00 00:00:00', 1, ''),
-(12, 'Jaisalmer', 'bhavnagar', '2023-10-03', '2023-10-07', 1, '5', '8000', 'The city\'s most promminent landmark is the Jaisalmer Fort, also called Golden Fort.\n                   india and is one of the largest city of Rajasthan,which also comprises of pakistan border on the west.\n                   the town is the world heritage site and is mainly built of yellowish sandstone.\n                   i think the best place to enjoy your winter vacation is Jaisalmer,\n                   Jaisalmer Fort,Gadisar Lake,Bada Bagh,Nathmal ki Haveli,Jaisalmer War Museum,Desert National Park Most tourist attraction of Jaisalmer.', 3, 0, '2023-10-03 00:00:00', '0000-00-00 00:00:00', 1, ''),
-(13, 'Haridwar', 'bhavnagar', '2023-10-03', '2023-10-10', 1, '8', '12000', 'In Haridwar,the most prominent Ganga Aarti takes place at Har-Ki-Pauri which is considered the \"feet of god.\"\n                   Har ki pauri is a famous ghat on the banks of the Ganges in Haridwar in Uttarakhand State in india.\n                   \"Har\" means \"Loard Shiva\" who is the god according to shaivite school of Hindu theology,\"Ki\" means \"of\" and \"pauri\" means \"steps\".\n                   Haridwar\'s long standing position as a great source for ayurvedic medicines and herbal.\n                   the best time to visit Haridwar is between November and March as the weather is cool and pleasant when you are out exploring the place.', 4, 0, '2023-10-03 00:00:00', '0000-00-00 00:00:00', 2, ''),
-(14, 'Karnataka', 'bhavnagar', '2023-10-12', '2023-10-19', 1, '7', '12000', 'Karnataka is primarily known for its destinations and its Wildlife/National Parks.\n                   Ensure to cover most important places to visit in Karnataka like Mysore,Coorg,Chikmagalur,Hampi,Murudeshwar,\n                   Udupi,Gokarna,Badami,Bidar,Bheemeshwari,Dandeli,\n                   Kanakpura,Madikeri,etc most visit Karnataka.\n                   Coorg one of the most beautiful places in Karnataka.Coorg is known as the \'Scotland of india\'.\n                   where you can see coffee plantations as far as your eyes go.October through April is the best time to visit \n                   Karnataka and South india.Winters are maild,summer are hot and humaid,and monsoon arrives early in Karnataka.', 5, 0, '2023-10-03 00:00:00', '0000-00-00 00:00:00', 0, ''),
-(15, 'Shimla Manali', 'bhavnagar', '2023-10-20', '2023-10-27', 1, '7', '15000', 'Manali is a town, near Kullu town in Kullu district in the Indian state of Himachal Pradesh.\n                   Manali is a popular tourist destination in india.March to June summer season in Manali is the best time to visit.\n                   Manali especially with friends and family is the best place to visit.Manali is also famous for adventure sports like skiing,\n                   mountaineering,paragliding,rafting,trekking etc.in brief,Manali-the veritable \"valley of the gods\".Tourist Places to visit in shimla the Ridge of Shimla,\n                   Kurfi,Green Valley,Jakhoo Hill,Chail,Kiala Forest,Christ Church,Kali Bari Temple,Chadwick waterfall and many more amazing attractions.', 10, 0, '2023-10-03 00:00:00', '0000-00-00 00:00:00', 0, '');
+INSERT INTO `tour_packages` (`package_id`, `from_place`, `to_place`, `from_date`, `to_date`, `status`, `total_days`, `package_price`, `information`, `company_id`, `entry_date`, `update_date`, `entry_by`, `img`) VALUES
+(20, 'Bhavnagar', 'Somnath', '2024-04-17', '2024-04-19', 1, '2', '800', 'Somnath Har Har MAHADEVVVV Harrrrrr', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'somnath.jpg1713122235695'),
+(22, 'Bhavnagar', 'Gova', '2024-04-15', '2024-04-18', 1, '4', '5000', 'Govaaaa Daruuuu..............', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'gova.jpg1713124952603');
 
 -- --------------------------------------------------------
 
@@ -287,7 +280,7 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_contact`, `user_dob`, `user_country`, `user_password`, `image`, `status`, `entry_date`, `update_date`, `entry_by`) VALUES
-(3, 'khushi', 'kuldipsinh0031@gmail.com', '1234567945', '2023-09-11', 'India', '000000000', '', 1, '2023-09-12 13:00:00', '2023-09-12 13:00:00', 1);
+(3, 'khushi', 'kuldipsinh0031@gmail.com', '1112223334', '2023-09-11', 'India', '123', '', 1, '2023-09-12 13:00:00', '2023-09-12 13:00:00', 1);
 
 --
 -- Indexes for dumped tables
@@ -409,7 +402,7 @@ ALTER TABLE `manage_bookings`
 -- AUTO_INCREMENT for table `tour_packages`
 --
 ALTER TABLE `tour_packages`
-  MODIFY `package_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'add primary key', AUTO_INCREMENT=16;
+  MODIFY `package_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'add primary key', AUTO_INCREMENT=23;
 
 --
 -- AUTO_INCREMENT for table `user`

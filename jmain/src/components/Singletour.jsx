@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useEffect, useState } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Singletour() {
   const [from_place, setfrom_place] = useState("");
@@ -12,7 +12,7 @@ export default function Singletour() {
   const [information, setinformation] = useState("");
   const [company_id, setcompany_id] = useState("");
   const [status, setstatus] = useState("");
-
+  const [total_person, settotal_person] = useState("");
   const [img, setimg] = useState("");
   const [formErrors, setFormErrors] = useState({});
 
@@ -44,6 +44,24 @@ export default function Singletour() {
     setstatus(res.data.status);
     setimg(res.data.img);
   };
+
+  const submitbtn = async (e) => {
+    e.preventDefault();
+
+    const formdata = new FormData();
+
+    formdata.append("total_person", total_person);
+
+    const data = {
+      total_person,
+    };
+    let res = "";
+
+    res = await axios.post("http://localhost:1100/nodejs/bill", data);
+
+    alert(res.data);
+    navigate("/Billing/" + id);
+  };
   return (
     <>
       {/* Home */}
@@ -58,7 +76,13 @@ export default function Singletour() {
         </div>
       </div>
       {/* Offers */}
-      <div className="listing">
+      <div
+        className="listing"
+        style={{
+          fontFamily:
+            "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+        }}
+      >
         {/* Single Listing */}
         <div className="container">
           <div className="row">
@@ -69,30 +93,26 @@ export default function Singletour() {
                   {/* Title */}
                   <div className="hotel_title_container d-flex flex-lg-row flex-column">
                     <div className="hotel_title_content">
-                      <h1 className="hotel_title">{to_place}</h1>
-                      <div className="rating_r rating_r_4 hotel_rating">
-                        <i />
-                        <i />
-                        <i />
-                        <i />
-                        <i />
-                      </div>
-                      <div className="hotel_location"></div>
-                    </div>
-                    <div className="hotel_title_button ml-lg-auto text-lg-right">
-                      <div className="button book_button trans_200">
-                        <a href="#">
-                          book
-                          <span />
-                          <span />
-                          <span />
-                        </a>
-                      </div>
-                      <div className="hotel_map_link_container">
-                        <div className="hotel_map_link">
-                          See Location on Map
-                        </div>
-                      </div>
+                      <h1
+                        className=""
+                        style={{
+                          color: "black",
+                          fontSize: 80,
+                          fontFamily:
+                            "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+                        }}
+                      >
+                        {to_place} Tour
+                      </h1>
+                      <h3
+                        style={{
+                          fontFamily:
+                            "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+                          color: "#606060",
+                        }}
+                      >
+                        Price - {package_price}/Person
+                      </h3>
                     </div>
                   </div>
                   {/* Listing Image */}
@@ -112,213 +132,110 @@ export default function Singletour() {
                       </div>
                     </div>
                   </div>
-                  {/* Hotel Gallery */}
-                  <div className="hotel_gallery">
-                    <div className="hotel_slider_container">
-                      <div className="owl-carousel owl-theme hotel_slider">
-                        {/* Hotel Gallery Slider Item */}
-                        <div className="owl-item">
-                          <a
-                            className="colorbox cboxElement"
-                            href="images/listing_1.jpg"
-                          >
-                            <img
-                              src="images/listing_thumb_1.jpg"
-                              alt="https://unsplash.com/@jbriscoe"
-                            />
-                          </a>
-                        </div>
-                        {/* Hotel Gallery Slider Item */}
-                        <div className="owl-item">
-                          <a
-                            className="colorbox cboxElement"
-                            href="images/listing_2.jpg"
-                          >
-                            <img
-                              src="images/listing_thumb_2.jpg"
-                              alt="https://unsplash.com/@grovemade"
-                            />
-                          </a>
-                        </div>
-                        {/* Hotel Gallery Slider Item */}
-                        <div className="owl-item">
-                          <a
-                            className="colorbox cboxElement"
-                            href="images/listing_3.jpg"
-                          >
-                            <img
-                              src="images/listing_thumb_3.jpg"
-                              alt="https://unsplash.com/@fransaraco"
-                            />
-                          </a>
-                        </div>
-                        {/* Hotel Gallery Slider Item */}
-                        <div className="owl-item">
-                          <a
-                            className="colorbox cboxElement"
-                            href="images/listing_4.jpg"
-                          >
-                            <img
-                              src="images/listing_thumb_4.jpg"
-                              alt="https://unsplash.com/@workweek"
-                            />
-                          </a>
-                        </div>
-                        {/* Hotel Gallery Slider Item */}
-                        <div className="owl-item">
-                          <a
-                            className="colorbox cboxElement"
-                            href="images/listing_5.jpg"
-                          >
-                            <img
-                              src="images/listing_thumb_5.jpg"
-                              alt="https://unsplash.com/@workweek"
-                            />
-                          </a>
-                        </div>
-                        {/* Hotel Gallery Slider Item */}
-                        <div className="owl-item">
-                          <a
-                            className="colorbox cboxElement"
-                            href="images/listing_6.jpg"
-                          >
-                            <img
-                              src="images/listing_thumb_6.jpg"
-                              alt="https://unsplash.com/@avidenov"
-                            />
-                          </a>
-                        </div>
-                        {/* Hotel Gallery Slider Item */}
-                        <div className="owl-item">
-                          <a
-                            className="colorbox cboxElement"
-                            href="images/listing_7.jpg"
-                          >
-                            <img
-                              src="images/listing_thumb_7.jpg"
-                              alt="https://unsplash.com/@pietruszka"
-                            />
-                          </a>
-                        </div>
-                        {/* Hotel Gallery Slider Item */}
-                        <div className="owl-item">
-                          <a
-                            className="colorbox cboxElement"
-                            href="images/listing_8.jpg"
-                          >
-                            <img
-                              src="images/listing_thumb_8.jpg"
-                              alt="https://unsplash.com/@rktkn"
-                            />
-                          </a>
-                        </div>
-                        {/* Hotel Gallery Slider Item */}
-                        <div className="owl-item">
-                          <a
-                            className="colorbox cboxElement"
-                            href="images/listing_9.jpg"
-                          >
-                            <img
-                              src="images/listing_thumb_9.jpg"
-                              alt="https://unsplash.com/@mindaugas"
-                            />
-                          </a>
-                        </div>
-                      </div>
-                      {/* Hotel Slider Nav - Prev */}
-                      <div className="hotel_slider_nav hotel_slider_prev">
-                        <svg
-                          version="1.1"
-                          id="Layer_6"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlnsXlink="http://www.w3.org/1999/xlink"
-                          x="0px"
-                          y="0px"
-                          width="28px"
-                          height="33px"
-                          viewBox="0 0 28 33"
-                          enableBackground="new 0 0 28 33"
-                          xmlSpace="preserve"
-                        >
-                          <defs>
-                            <linearGradient id="hotel_grad_prev">
-                              <stop offset="0%" stopColor="#fa9e1b" />
-                              <stop offset="100%" stopColor="#8d4fff" />
-                            </linearGradient>
-                          </defs>
-                          <path
-                            className="nav_path"
-                            fill="#F3F6F9"
-                            d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
-											M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
-											C22.545,2,26,5.541,26,9.909V23.091z"
-                          />
-                          <polygon
-                            className="nav_arrow"
-                            fill="#F3F6F9"
-                            points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
-											11.042,18.219 "
-                          />
-                        </svg>
-                      </div>
-                      {/* Hotel Slider Nav - Next */}
-                      <div className="hotel_slider_nav hotel_slider_next">
-                        <svg
-                          version="1.1"
-                          id="Layer_7"
-                          xmlns="http://www.w3.org/2000/svg"
-                          xmlnsXlink="http://www.w3.org/1999/xlink"
-                          x="0px"
-                          y="0px"
-                          width="28px"
-                          height="33px"
-                          viewBox="0 0 28 33"
-                          enableBackground="new 0 0 28 33"
-                          xmlSpace="preserve"
-                        >
-                          <defs>
-                            <linearGradient id="hotel_grad_next">
-                              <stop offset="0%" stopColor="#fa9e1b" />
-                              <stop offset="100%" stopColor="#8d4fff" />
-                            </linearGradient>
-                          </defs>
-                          <path
-                            className="nav_path"
-                            fill="#F3F6F9"
-                            d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
-										M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
-										C22.545,2,26,5.541,26,9.909V23.091z"
-                          />
-                          <polygon
-                            className="nav_arrow"
-                            fill="#F3F6F9"
-                            points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
-										17.046,15.554 "
-                          />
-                        </svg>
-                      </div>
-                    </div>
+                  <div
+                    style={{
+                      fontSize: "50px",
+                      marginTop: 10,
+                      color: "black",
+                      fontFamily:
+                        "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+                    }}
+                  >
+                    About
+                  </div>
+                  <div
+                    style={{ color: "black", paddingTop: 10, fontSize: "25px" }}
+                  >
+                    Tour starting date: {from_date} <br />
+                    Tour ending date: {to_date}
                   </div>
                   {/* Hotel Info Text */}
                   <div className="hotel_info_text">
+                    <h1
+                      style={{
+                        color: "black",
+                        fontFamily:
+                          "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+                      }}
+                    >
+                      Information
+                    </h1>
                     <p>{information}</p>
                   </div>
-                  {/* Hotel Info Tags */}
-                  <div className="hotel_info_tags">
-                    <ul className="hotel_icons_list">
-                      <li className="hotel_icons_item">
-                        <img src="images/post.png" alt="" />
-                      </li>
-                      <li className="hotel_icons_item">
-                        <img src="images/compass.png" alt="" />
-                      </li>
-                      <li className="hotel_icons_item">
-                        <img src="images/bicycle.png" alt="" />
-                      </li>
-                      <li className="hotel_icons_item">
-                        <img src="images/sailboat.png" alt="" />
-                      </li>
-                    </ul>
+                  {/* For book trips */}
+                  <div
+                    className=""
+                    style={{ paddingLeft: 350, paddingRight: 350 }}
+                  >
+                    <div
+                      style={{
+                        color: "black",
+                        marginTop: 20,
+                        fontWeight: "bold",
+                        fontSize: "40px",
+                        textAlign: "center",
+                        fontFamily:
+                          "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+                      }}
+                    >
+                      Book trip your here
+                    </div>
+                    <div style={{ marginBottom: 15, fontSize: "20px" }}>
+                      <div
+                        style={{
+                          marginBottom: 5,
+                          color: "black",
+                          marginTop: 10,
+                        }}
+                      >
+                        Total members
+                      </div>
+                      <select
+                        id="total"
+                        style={{
+                          width: "100%",
+                          padding: 8,
+                          borderRadius: 5,
+                          border: "1px solid purple",
+                          color: "#31124B",
+                          id: "total",
+                        }}
+                        onChange={(e) => settotal_person(e.target.value)}
+                      >
+                        <option>Select</option>
+                        <option value="1">One</option>
+                        <option value="2">Two</option>
+                        <option value="3">Three</option>
+                        <option value="4">Four</option>
+                        <option value="5">Five</option>
+                      </select>
+
+                      {/* <Link
+                        to={"/Billing/" + id}
+                        class="button-48"
+                        role="button"
+                        style={{ marginTop: 20 }}
+                      > */}
+                      <button
+                        to={"/Billing/" + id}
+                        class="button-48"
+                        role="button"
+                        style={{ marginTop: 20 }}
+                        onClick={submitbtn}
+                      >
+                        <span
+                          class="text"
+                          style={{
+                            color: "black",
+                            fontWeight: "bold",
+                            fontFamily:
+                              "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+                          }}
+                        >
+                          Check out
+                        </span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>

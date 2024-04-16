@@ -13,7 +13,7 @@ export default function Add_company() {
   const [entry_date, setentry_date] = useState("");
   const [update_date, setupdate_date] = useState("");
   const [entry_by, setentry_by] = useState("");
-  const[formErrors,setFormErrors]=useState({})
+  const [formErrors, setFormErrors] = useState({});
   const location = useLocation();
   const navigate = useNavigate();
   const id = location.pathname.split("/")[2]
@@ -37,7 +37,7 @@ export default function Add_company() {
     settotal_person(res.data.total_person);
     setprice(res.data.price);
     setadv_payment(res.data.adv_payment);
-    setstatus(res.data.status)
+    setstatus(res.data.status);
     setentry_date(res.data.entry_date);
     setupdate_date(res.data.update_date);
     setentry_by(res.data.entry_by);
@@ -71,19 +71,26 @@ export default function Add_company() {
 
   const submitbtn = async (e) => {
     e.preventDefault();
-    setFormErrors(validate())
+    setFormErrors(validate());
 
-    if(user_id && package_id && company_id && total_person && price && adv_payment && status){
-
+    if (
+      user_id &&
+      package_id &&
+      company_id &&
+      total_person &&
+      price &&
+      adv_payment &&
+      status
+    ) {
       const formdata = new FormData();
 
-      formdata.append("user_id",user_id);
-      formdata.append("package_id",package_id);
-      formdata.append("company_id",company_id);
-      formdata.append("total_person",total_person);
-      formdata.append("price",price);
-      formdata.append("adv_payment",adv_payment);
-      formdata.append("status",status);
+      formdata.append("user_id", user_id);
+      formdata.append("package_id", package_id);
+      formdata.append("company_id", company_id);
+      formdata.append("total_person", total_person);
+      formdata.append("price", price);
+      formdata.append("adv_payment", adv_payment);
+      formdata.append("status", status);
     }
 
     const data = {
@@ -100,10 +107,7 @@ export default function Add_company() {
     };
     let res = "";
     if (id) {
-      res = await axios.put(
-        "http://localhost:1100/nodejs/booking/" + id,
-        data
-      );
+      res = await axios.put("http://localhost:1100/nodejs/booking/" + id, data);
     } else {
       res = await axios.post("http://localhost:1100/nodejs/booking", data);
     }
@@ -126,7 +130,7 @@ export default function Add_company() {
                   onChange={(e) => setuser_id(e.target.value)}
                 />
                 <label for="floatingName">User id</label>
-                <p style={{color: "red"}}>{formErrors.user_id}</p>
+                <p style={{ color: "red" }}>{formErrors.user_id}</p>
               </div>
             </div>
 
@@ -140,8 +144,7 @@ export default function Add_company() {
                   onChange={(e) => setcompany_id(e.target.value)}
                 />
                 <label for="floatingPassword">Company id</label>
-                <p style={{color: "red"}}>{formErrors.company_id}</p>
-
+                <p style={{ color: "red" }}>{formErrors.company_id}</p>
               </div>
             </div>
 
@@ -155,7 +158,7 @@ export default function Add_company() {
                   onChange={(e) => setpackage_id(e.target.value)}
                 />
                 <label for="floatingPassword">Package id</label>
-                <p style={{color: "red"}}>{formErrors.package_id}</p>
+                <p style={{ color: "red" }}>{formErrors.package_id}</p>
               </div>
             </div>
 
@@ -169,7 +172,7 @@ export default function Add_company() {
                   onChange={(e) => settotal_person(e.target.value)}
                 />
                 <label for="floatingPassword">Total Person</label>
-                <p style={{color: "red"}}>{formErrors.total_person}</p>
+                <p style={{ color: "red" }}>{formErrors.total_person}</p>
               </div>
             </div>
 
@@ -183,7 +186,7 @@ export default function Add_company() {
                   onChange={(e) => setprice(e.target.value)}
                 />
                 <label for="floatingPassword">Price</label>
-                <p style={{color: "red"}}>{formErrors.price}</p>
+                <p style={{ color: "red" }}>{formErrors.price}</p>
               </div>
             </div>
 
@@ -197,16 +200,21 @@ export default function Add_company() {
                   onChange={(e) => setadv_payment(e.target.value)}
                 />
                 <label for="floatingPassword">Advance payment</label>
-                <p style={{color: "red"}}>{formErrors.adv_payment}</p>
+                <p style={{ color: "red" }}>{formErrors.adv_payment}</p>
               </div>
             </div>
 
             <div class="col-6">
-          <select name="cars" id="cars" class="form-control" onChange={(e)=>setstatus(e.target.value)} >
-              <option value="0">1.active</option>
-              <option value="0">2.inactive</option>          
-          </select>
-        </div>
+              <select
+                name="cars"
+                id="cars"
+                class="form-control"
+                onChange={(e) => setstatus(e.target.value)}
+              >
+                <option value="0">1.active</option>
+                <option value="0">2.inactive</option>
+              </select>
+            </div>
 
             <div class="col-6">
               <div class="form-floating">

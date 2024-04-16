@@ -42,7 +42,6 @@ export default function Add_packages() {
     setinformation(res.data.information);
     setcompany_id(res.data.company_id);
     setstatus(res.data.status);
-
     setimg(res.data.img);
   };
 

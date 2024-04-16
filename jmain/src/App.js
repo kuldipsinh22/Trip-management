@@ -9,6 +9,7 @@ import Offers from "./components/Offers";
 import Contact from "./components/Contact";
 import Singletour from "./components/Singletour";
 import Login from "./components/Login";
+import Billing from "./components/Billing";
 
 const Layout = () => {
   return (
@@ -37,7 +38,7 @@ function App() {
               <Route path="/Offers" element={<Offers />} />
               <Route path="/Contact" element={<Contact />} />
               <Route path="/Singletour/:id" element={<Singletour />} />
-              <Route path="/Login" element={<Login />} />
+              <Route path="/Billing/:id" element={<Billing />} />
             </Routes>
             <Footer />
           </>
