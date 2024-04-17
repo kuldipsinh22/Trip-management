@@ -46,30 +46,7 @@ export default function Sidebar() {
                   <span>Tour_packages</span>
                 </Link>
               </li>
-              <li class="nav-item">
-                <Link class="nav-link collapsed" to="/Manage_bookings">
-                  <i class="bi bi-grid"></i>
-                  <span>Manage_bookings</span>
-                </Link>
-              </li>
-              <li class="nav-item">
-                <Link class="nav-link collapsed" to="/Highlights">
-                  <i class="bi bi-grid"></i>
-                  <span>Highlights</span>
-                </Link>
-              </li>
-              <li class="nav-item">
-                <Link class="nav-link collapsed" to="/Inquiries">
-                  <i class="bi bi-grid"></i>
-                  <span>Inquiries</span>
-                </Link>
-              </li>
-              <li class="nav-item">
-                <Link class="nav-link collapsed" to="/Feedbacks">
-                  <i class="bi bi-grid"></i>
-                  <span>Feedbacks</span>
-                </Link>
-              </li>
+
               <li class="nav-item">
                 <Link class="nav-link collapsed" to="/Add_contact">
                   <i class="bi bi-envelope"></i>
@@ -82,7 +59,6 @@ export default function Sidebar() {
                   <span>Booking</span>
                 </Link>
               </li>
-              
             </>
           ) : (
             <>
