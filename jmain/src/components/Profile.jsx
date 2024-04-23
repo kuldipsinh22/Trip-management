@@ -114,6 +114,13 @@ export default function Profile() {
     setbooking(res.data);
     console.log(res.data);
   };
+
+  const signout = () => {
+    sessionStorage.clear();
+    // setId("");
+    navigate("/Login");
+    window.location.reload();
+  };
   return (
     <div>
       <div className="home">
@@ -356,6 +363,24 @@ export default function Profile() {
                   }}
                 >
                   Update...
+                </span>
+              </button>
+              <button
+                class="button-48"
+                role="button"
+                style={{ marginTop: 20, marginLeft: 50, marginBottom: 20 }}
+                onClick={signout}
+              >
+                <span
+                  class="text"
+                  style={{
+                    color: "black",
+                    fontWeight: "bold",
+                    fontFamily:
+                      "'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif",
+                  }}
+                >
+                  Log out...
                 </span>
               </button>
             </div>

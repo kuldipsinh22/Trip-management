@@ -11,6 +11,7 @@ import Singletour from "./components/Singletour";
 import Login from "./components/Login";
 import Billing from "./components/Billing";
 import Profile from "./components/Profile";
+import Signup from "./components/Sign-up";
 
 const Layout = () => {
   return (
@@ -48,6 +49,8 @@ function App() {
           <>
             <Routes>
               <Route path="/" element={<Login />} />
+              <Route path="/Login" element={<Login />} />
+              <Route path="/Registration" element={<Signup />} />
             </Routes>
           </>
         )}

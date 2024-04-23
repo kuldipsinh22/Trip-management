@@ -15,6 +15,7 @@ import router11 from "./models/r_login.js";
 import router12 from "./models/MainLoginRouter.js";
 import router13 from "./models/r_bill.js";
 import router14 from "./models/personalbooking.js";
+import router15 from "./models/r_signup.js";
 
 const app = express();
 
@@ -37,6 +38,7 @@ app.use("/nodejs/login", router11);
 app.use("/nodejs/mainlogin", router12);
 app.use("/nodejs/bill", router13);
 app.use("/nodejs/personalbooks", router14);
+app.use("/nodejs/signup", router15);
 
 app.listen(1100, () => {
   console.log("Server is running on 1100 port");

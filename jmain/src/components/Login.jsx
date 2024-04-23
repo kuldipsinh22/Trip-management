@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { Link } from "react-router-dom";
 
 export default function Login() {
   const [user_contact, setContact] = useState("");
@@ -109,6 +110,11 @@ export default function Login() {
             >
               Login
             </button>
+          </div>
+          <div style={{ marginTop: 20 }}>
+            <Link to="/Registration">
+              <p>Don't have an account?</p>
+            </Link>
           </div>
         </div>
         {/* Right side: Image */}
