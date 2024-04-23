@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Apr 16, 2024 at 07:43 AM
+-- Generation Time: Apr 23, 2024 at 08:58 AM
 -- Server version: 10.4.32-MariaDB
 -- PHP Version: 8.2.12
 
@@ -211,8 +211,8 @@ CREATE TABLE `manage_bookings` (
   `price` bigint(20) NOT NULL COMMENT 'fk:packages',
   `adv_payment` int(10) NOT NULL COMMENT 'add payment',
   `status` int(5) NOT NULL COMMENT '1.active and 2.inactive',
-  `entary_date` datetime NOT NULL COMMENT 'add insert record date',
-  `update_date` datetime DEFAULT NULL COMMENT 'update record date',
+  `entry_date` datetime NOT NULL COMMENT 'add insert record date',
+  `update_date` datetime NOT NULL COMMENT 'update record date',
   `entry_by` bigint(20) NOT NULL COMMENT 'store user id'
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -220,8 +220,14 @@ CREATE TABLE `manage_bookings` (
 -- Dumping data for table `manage_bookings`
 --
 
-INSERT INTO `manage_bookings` (`booking_id`, `user_id`, `package_id`, `company_id`, `total_person`, `price`, `adv_payment`, `status`, `entary_date`, `update_date`, `entry_by`) VALUES
-(3, 1, 1, 1, 5, 350000, 35000, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0);
+INSERT INTO `manage_bookings` (`booking_id`, `user_id`, `package_id`, `company_id`, `total_person`, `price`, `adv_payment`, `status`, `entry_date`, `update_date`, `entry_by`) VALUES
+(13, 3, 1, 22, 2, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(14, 3, 1, 22, 3, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(15, 3, 1, 22, 1, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(16, 3, 1, 20, 3, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(17, 3, 1, 22, 3, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(18, 3, 1, 20, 0, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0),
+(19, 3, 1, 20, 4, 0, 0, 0, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0);
 
 -- --------------------------------------------------------
 
@@ -252,7 +258,7 @@ CREATE TABLE `tour_packages` (
 
 INSERT INTO `tour_packages` (`package_id`, `from_place`, `to_place`, `from_date`, `to_date`, `status`, `total_days`, `package_price`, `information`, `company_id`, `entry_date`, `update_date`, `entry_by`, `img`) VALUES
 (20, 'Bhavnagar', 'Somnath', '2024-04-17', '2024-04-19', 1, '2', '800', 'Somnath Har Har MAHADEVVVV Harrrrrr', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'somnath.jpg1713122235695'),
-(22, 'Bhavnagar', 'Gova', '2024-04-15', '2024-04-18', 1, '4', '5000', 'Govaaaa Daruuuu..............', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'gova.jpg1713124952603');
+(22, 'Bhavnagar', 'Goa', '2024-04-14', '2024-04-17', 1, '4', '5000', 'Goaaaa Daruuuu..............', 1, '0000-00-00 00:00:00', '0000-00-00 00:00:00', 0, 'gova.jpg1713295473195');
 
 -- --------------------------------------------------------
 
@@ -268,7 +274,7 @@ CREATE TABLE `user` (
   `user_dob` date NOT NULL COMMENT 'add date of birth',
   `user_country` varchar(10) NOT NULL COMMENT 'add country',
   `user_password` varchar(20) NOT NULL COMMENT 'add password',
-  `image` varchar(255) NOT NULL COMMENT 'add image',
+  `img` varchar(255) NOT NULL COMMENT 'add image',
   `status` int(5) NOT NULL DEFAULT 1 COMMENT '1.active and 2.inactive',
   `entry_date` datetime NOT NULL COMMENT 'add insert record date',
   `update_date` datetime DEFAULT NULL COMMENT 'add update record date',
@@ -279,8 +285,8 @@ CREATE TABLE `user` (
 -- Dumping data for table `user`
 --
 
-INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_contact`, `user_dob`, `user_country`, `user_password`, `image`, `status`, `entry_date`, `update_date`, `entry_by`) VALUES
-(3, 'khushi', 'kuldipsinh0031@gmail.com', '1112223334', '2023-09-11', 'India', '123', '', 1, '2023-09-12 13:00:00', '2023-09-12 13:00:00', 1);
+INSERT INTO `user` (`user_id`, `user_name`, `user_email`, `user_contact`, `user_dob`, `user_country`, `user_password`, `img`, `status`, `entry_date`, `update_date`, `entry_by`) VALUES
+(3, 'khushi', 'kuldipsinh0031@gmail.com', '1112223334', '2023-09-08', 'India', '123', 'gova.jpg1713295615724', 1, '2023-09-12 13:00:00', '2024-04-17 02:48:17', 1);
 
 --
 -- Indexes for dumped tables
@@ -396,7 +402,7 @@ ALTER TABLE `inquiries`
 -- AUTO_INCREMENT for table `manage_bookings`
 --
 ALTER TABLE `manage_bookings`
-  MODIFY `booking_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'add primary key', AUTO_INCREMENT=6;
+  MODIFY `booking_id` bigint(20) NOT NULL AUTO_INCREMENT COMMENT 'add primary key', AUTO_INCREMENT=20;
 
 --
 -- AUTO_INCREMENT for table `tour_packages`

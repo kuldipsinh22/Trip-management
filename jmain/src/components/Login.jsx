@@ -114,7 +114,7 @@ export default function Login() {
         {/* Right side: Image */}
         <div style={{ width: "50%", borderRadius: 10, marginLeft: 10 }}>
           <img
-            src="http://wonderfulengineering.com/wp-content/uploads/2016/01/black-wallpaper-5.jpg"
+            src="https://wallpaperaccess.com/full/1350982.jpg"
             alt="Image"
             style={{
               width: "100%",
