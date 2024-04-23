@@ -1,7 +1,8 @@
 import { db } from "../db.js";
 
 export const getBookings = (req, res) => {
-  const query = "SELECT * from manage_bookings where user_id=?";
+  const query =
+    "SELECT a.*, b.*, c.* from manage_bookings a, user b, tour_packages c where user_id=? and a.user_id = b.user_id and a.package_id = c.package_id";
   db.query(query, [req.params.id], (err, data) => {
     if (err) return res.json(err);
     return res.json(data);
@@ -18,13 +19,12 @@ export const getBooking = (req, res) => {
 
 export const insertBooking = (req, res) => {
   const query =
-    "INSERT INTO `manage_bookings`(`user_id`, `package_id`, `company_id`, `total_person`, `adv_payment`) VALUES(?)";
+    "INSERT INTO `manage_bookings`(`user_id`, `package_id`, `company_id`, `total_person`) VALUES(?)";
   const values = [
     req.body.user_id,
     req.body.company_id,
     req.body.package_id,
     req.body.total_person,
-    req.body.adv_payment,
   ];
   console.log(query);
   console.log(values);

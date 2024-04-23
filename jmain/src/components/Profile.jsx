@@ -101,19 +101,17 @@ export default function Profile() {
       navigate("/Home");
     }
   };
-  const [booking, setbooking] = useState([]);
-  let i = 1;
-  useEffect(() => {
-    getBooking();
-  }, []);
+  // const [booking, setbooking] = useState([]);
+  // let i = 1;
+  // useEffect(() => {
+  //   getBooking();
+  // }, []);
 
-  const getBooking = async () => {
-    const res = await axios.get(
-      "http://localhost:1100/nodejs/personalbooks" + auth
-    );
-    setbooking(res.data);
-    console.log(res.data);
-  };
+  // const getBooking = async () => {
+  //   const res = await axios.get("http://localhost:1100/nodejs/userbook" + auth);
+  //   setbooking(res.data);
+  //   console.log(res.data);
+  // };
 
   const signout = () => {
     sessionStorage.clear();
@@ -386,7 +384,7 @@ export default function Profile() {
             </div>
           </div>
           {/* Part 3: my tours */}
-          <div>
+          {/* <div>
             <h2
               style={{
                 fontFamily:
@@ -402,7 +400,7 @@ export default function Profile() {
                 <p>Date: January 1, 2022</p>
               </div>;
             })}
-          </div>
+          </div> */}
         </div>
       </div>
     </div>

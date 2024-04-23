@@ -13,6 +13,9 @@ export default function Add_packages() {
   const [company_id, setcompany_id] = useState("");
   const [status, setstatus] = useState("");
 
+  const [auth, setAuth] = useState(sessionStorage.getItem("admin"));
+  const [role_id, setRole] = useState(sessionStorage.getItem("role"));
+
   const [img, setimg] = useState("");
   const [formErrors, setFormErrors] = useState({});
 
@@ -80,43 +83,83 @@ export default function Add_packages() {
     e.preventDefault();
     setFormErrors(validate());
 
-    if (
-      from_place &&
-      to_place &&
-      from_date &&
-      to_date &&
-      total_days &&
-      package_price &&
-      information &&
-      company_id &&
-      status
-    ) {
-      const formdata = new FormData();
+    if (role_id == 1) {
+      if (
+        from_place &&
+        to_place &&
+        from_date &&
+        to_date &&
+        total_days &&
+        package_price &&
+        information &&
+        company_id &&
+        status
+      ) {
+        const formdata = new FormData();
 
-      formdata.append("from_place", from_place);
-      formdata.append("to_place", to_place);
-      formdata.append("from_date", from_date);
-      formdata.append("to_date", to_date);
-      formdata.append("total_days", total_days);
-      formdata.append("package_price", package_price);
-      formdata.append("information", information);
-      formdata.append("company_id", company_id);
-      formdata.append("img", img);
-      formdata.append("status", status);
-      let res = "";
-      if (id) {
-        res = await axios.put(
-          "http://localhost:1100/nodejs/package/" + id,
-          formdata
-        );
-      } else {
-        res = await axios.post(
-          "http://localhost:1100/nodejs/package",
-          formdata
-        );
+        formdata.append("from_place", from_place);
+        formdata.append("to_place", to_place);
+        formdata.append("from_date", from_date);
+        formdata.append("to_date", to_date);
+        formdata.append("total_days", total_days);
+        formdata.append("package_price", package_price);
+        formdata.append("information", information);
+        formdata.append("company_id", company_id);
+        formdata.append("img", img);
+        formdata.append("status", status);
+        let res = "";
+        if (id) {
+          res = await axios.put(
+            "http://localhost:1100/nodejs/package/" + id,
+            formdata
+          );
+        } else {
+          res = await axios.post(
+            "http://localhost:1100/nodejs/package",
+            formdata
+          );
+        }
+        alert(res.data);
+        navigate("/Tour_packages");
       }
-      alert(res.data);
-      navigate("/Tour_packages");
+    } else if (role_id == 2) {
+      if (
+        from_place &&
+        to_place &&
+        from_date &&
+        to_date &&
+        total_days &&
+        package_price &&
+        information &&
+        status
+      ) {
+        const formdata = new FormData();
+
+        formdata.append("from_place", from_place);
+        formdata.append("to_place", to_place);
+        formdata.append("from_date", from_date);
+        formdata.append("to_date", to_date);
+        formdata.append("total_days", total_days);
+        formdata.append("package_price", package_price);
+        formdata.append("information", information);
+        formdata.append("company_id", auth);
+        formdata.append("img", img);
+        formdata.append("status", status);
+        let res = "";
+        if (id) {
+          res = await axios.put(
+            "http://localhost:1100/nodejs/package/" + id,
+            formdata
+          );
+        } else {
+          res = await axios.post(
+            "http://localhost:1100/nodejs/package",
+            formdata
+          );
+        }
+        alert(res.data);
+        navigate("/Tour_packages");
+      }
     }
   };
   return (
@@ -210,20 +253,23 @@ export default function Add_packages() {
                 <p style={{ color: "red" }}>{formErrors.package_price}</p>
               </div>
             </div>
-
-            <div class="col-4">
-              <div class="form-floating">
-                <input
-                  type="text"
-                  class="form-control"
-                  placeholder="Company id"
-                  defaultValue={company_id}
-                  onChange={(e) => setcompany_id(e.target.value)}
-                />
-                <label for="floatingZip">Company id</label>
-                <p style={{ color: "red" }}>{formErrors.company_id}</p>
+            {role_id == 1 ? (
+              <div class="col-4">
+                <div class="form-floating">
+                  <input
+                    type="text"
+                    class="form-control"
+                    placeholder="Company id"
+                    defaultValue={company_id}
+                    onChange={(e) => setcompany_id(e.target.value)}
+                  />
+                  <label for="floatingZip">Company id</label>
+                  <p style={{ color: "red" }}>{formErrors.company_id}</p>
+                </div>
               </div>
-            </div>
+            ) : (
+              <></>
+            )}
 
             <div class="col-12">
               <div class="form-floating">
@@ -252,19 +298,22 @@ export default function Add_packages() {
                 {/* <p style={{ color: "red" }}>{formErrors.company_id}</p> */}
               </div>
             </div>
-
-            <div class="col-6">
-              <select
-                name="status"
-                id="status"
-                class="form-control"
-                onChange={(e) => setstatus(e.target.value)}
-              >
-                <option>Select</option>
-                <option value="1">1.active</option>
-                <option value="2">2.inactive</option>
-              </select>
-            </div>
+            {role_id == 1 ? (
+              <div class="col-6">
+                <select
+                  name="status"
+                  id="status"
+                  class="form-control"
+                  onChange={(e) => setstatus(e.target.value)}
+                >
+                  <option>Select</option>
+                  <option value="1">1.active</option>
+                  <option value="2">2.inactive</option>
+                </select>
+              </div>
+            ) : (
+              <></>
+            )}
 
             <div class="text-center">
               <button type="submit" class="btn btn-primary" onClick={submitbtn}>

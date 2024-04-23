@@ -63,14 +63,12 @@ export default function Singletour() {
     formdata.append("company_id", company_id);
     formdata.append("package_id", id);
     formdata.append("total_person", total_person);
-    formdata.append("adv_payment", adv_payment);
 
     const data = {
       user_id: auth,
       company_id: company_id,
       package_id: id,
       total_person,
-      adv_payment,
     };
     let res = "";
 

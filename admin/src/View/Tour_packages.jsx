@@ -5,15 +5,27 @@ import axios from "axios";
 export default function Tour_packages() {
   const [packages, setPackages] = useState([]);
   const [formErrors, setFormErrors] = useState({});
+
+  const [auth, setAuth] = useState(sessionStorage.getItem("admin"));
+  const [role_id, setRole] = useState(sessionStorage.getItem("role"));
   let i = 1;
   useEffect(() => {
     getPackages();
   }, []);
-
   const getPackages = async () => {
-    const res = await axios.get("http://localhost:1100/nodejs/package");
-    setPackages(res.data);
-    console.log(res.data);
+    if (role_id == 1) {
+      // admin
+      const res = await axios.get("http://localhost:1100/nodejs/package");
+      setPackages(res.data);
+      console.log(res.data);
+    } else if (role_id == 2) {
+      // company
+      const res = await axios.get(
+        "http://localhost:1100/nodejs/personaltour/" + auth
+      );
+      setPackages(res.data);
+      console.log(res.data);
+    }
   };
 
   const deletePackages = async (id) => {

@@ -1,6 +1,6 @@
-import React,{useState,useEffect} from 'react'
-import { Link } from 'react-router-dom'
-import axios from 'axios'
+import React, { useState, useEffect } from "react";
+import { Link } from "react-router-dom";
+import axios from "axios";
 
 export default function Admin() {
   const [Admin, setAdmin] = useState([]);
@@ -32,10 +32,6 @@ export default function Admin() {
           <div class="card-body">
             <h5 class="card-title">Admin information</h5>
 
-            <button class="button-39" role="button">
-              <Link to={`/Add_Admin`}>Add admin</Link>
-            </button>
-
             <table class="table table-borderless">
               <thead>
                 <tr>
@@ -47,36 +43,20 @@ export default function Admin() {
                 </tr>
               </thead>
               <tbody>
-                {Admin.map(Admin=>
+                {Admin.map((Admin) => (
                   <tr>
-                  <th scope="row">{i++}</th>
-                  <td>{Admin.admin_name}</td>
-                  <td>{Admin.admin_email}</td>
-                  <td>{Admin.admin_contact}</td>
-                  <td>{Admin.admin_password}</td>
-                  <td>
-                      <button class="button-39" role="button">
-                        <Link to={`/Add_Admin/` + Admin.admin_id}>
-                          Edit
-                        </Link>
-                      </button>
-                    </td>
-                    <td>
-                      <button
-                        class="button-40"
-                        role="button"
-                        onClick={() => deleteAdmin(Admin.admin_id)}
-                      >
-                        Delete
-                      </button>
-                    </td>
-                </tr>
-                )}
+                    <th scope="row">{i++}</th>
+                    <td>{Admin.admin_name}</td>
+                    <td>{Admin.admin_email}</td>
+                    <td>{Admin.contact1}</td>
+                    <td>{Admin.password}</td>
+                  </tr>
+                ))}
               </tbody>
             </table>
           </div>
         </div>
-    </main> 
+      </main>
     </>
-  )
+  );
 }

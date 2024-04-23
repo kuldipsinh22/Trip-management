@@ -17,10 +17,8 @@ export default function Header() {
     }
   }, [admin_id]);
 
-  
-
   const fatchAdminName = async () => {
-    if(role_id==1){
+    if (role_id == 1) {
       try {
         const res = await axios.get(
           "http://localhost:1100/nodejs/admin/" + admin_id
@@ -28,8 +26,7 @@ export default function Header() {
         console.log(res.data.admin_name);
         setName(res.data.admin_name);
       } catch (error) {}
-    }
-    else{
+    } else {
       try {
         const res = await axios.get(
           "http://localhost:1100/nodejs/company/" + admin_id
@@ -38,7 +35,6 @@ export default function Header() {
         setName(res.data.company_name);
       } catch (error) {}
     }
-    
   };
 
   const btnSignOut = () => {

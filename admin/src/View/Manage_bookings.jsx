@@ -9,14 +9,14 @@ export default function Manage_bookings() {
     getBooking();
   }, []);
 
-  const getBooking=async ()=>{
-    const res=await axios.get("http://localhost:1100/nodejs/booking");
-    setbooking(res.data)
-    console.log(res.data)
-  }
+  const getBooking = async () => {
+    const res = await axios.get("http://localhost:1100/nodejs/booking");
+    setbooking(res.data);
+    console.log(res.data);
+  };
   return (
     <>
-       <main id="main" class="main">
+      <main id="main" class="main">
         <div class="card">
           <div class="card-body">
             <h5 class="card-title">Trip</h5>
@@ -39,33 +39,33 @@ export default function Manage_bookings() {
                 </tr>
               </thead>
               <tbody>
-                {booking.map((booking)=>{
+                {booking.map((booking) => {
                   <tr>
-                  <th scope="row">{i++}</th>
-                  <td>{booking.user_id}</td>
-                  <td>{booking.package_id}</td>
-                  <td>{booking.company_id}</td>
-                  <td>{booking.total_person}</td>
-                  <td>{booking.price}</td>
-                  <td>{booking.adv_payment}</td>
-                  <td>{booking.status}</td>
+                    <th scope="row">{i++}</th>
+                    <td>{booking.user_id}</td>
+                    <td>{booking.package_id}</td>
+                    <td>{booking.company_id}</td>
+                    <td>{booking.total_person}</td>
+                    <td>{booking.price}</td>
+                    <td>{booking.adv_payment}</td>
+                    <td>{booking.status}</td>
 
-                  <td>
-                    <button class="button-62" role="button">
-                      EDIT
-                    </button>
-                    &nbsp; &nbsp; &nbsp;
-                    <button class="button-63" role="button">
-                      DELETE
-                    </button>
-                  </td>
-                </tr>
+                    <td>
+                      <button class="button-62" role="button">
+                        EDIT
+                      </button>
+                      &nbsp; &nbsp; &nbsp;
+                      <button class="button-63" role="button">
+                        DELETE
+                      </button>
+                    </td>
+                  </tr>;
                 })}
               </tbody>
             </table>
           </div>
         </div>
-    </main> 
+      </main>
     </>
-  )
+  );
 }

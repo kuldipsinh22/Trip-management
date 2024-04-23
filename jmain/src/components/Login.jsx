@@ -71,7 +71,7 @@ export default function Login() {
             <div style={{ marginBottom: 5, color: "black" }}>Contact</div>
             <input
               type="text"
-              placeholder="User Contact"
+              placeholder="Your Contact"
               style={{
                 width: "100%",
                 padding: 8,

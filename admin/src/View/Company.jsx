@@ -55,8 +55,8 @@ export default function Company() {
                     <td>{Company.company_name}</td>
                     <td>{Company.owner_name}</td>
                     <td>{Company.company_email1}</td>
-                    <td>{Company.company_contact1}</td>
-                    <td>{Company.company_password}</td>
+                    <td>{Company.contact1}</td>
+                    <td>{Company.password}</td>
                     <td>
                       <button class="button-39" role="button">
                         <Link to={`/Add_company/` + Company.company_id}>
