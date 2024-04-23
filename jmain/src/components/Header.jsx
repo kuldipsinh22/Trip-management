@@ -82,10 +82,15 @@ export default function Header() {
               <div className="col main_nav_col d-flex flex-row align-items-center justify-content-start">
                 <div className="logo_container">
                   <div className="logo">
-                    <a href="#">
-                      <img src="images/logo.png" alt="" />
-                      travelix
-                    </a>
+                    <h3
+                      style={{
+                        fontSize: "25px",
+                        fontWeight: "bold",
+                        color: "white",
+                      }}
+                    >
+                      Cheers Holidays
+                    </h3>
                   </div>
                 </div>
                 <div
@@ -100,7 +105,7 @@ export default function Header() {
                       <Link to="/About">About us</Link>
                     </li>
                     <li className="main_nav_item">
-                      <Link to="/Offers">offers</Link>
+                      <Link to="/Offers">Packages</Link>
                     </li>
                     <li className="main_nav_item">
                       <Link to="/Blogs">news</Link>

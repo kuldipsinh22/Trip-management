@@ -1,7 +1,61 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import axios from "axios";
+import { useEffect, useState } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 
 export default function Home() {
+  const [user_name, setuser_name] = useState("");
+  const [user_email, setuser_email] = useState("");
+  const [subject, setsubject] = useState("");
+  const [question, setquestion] = useState("");
+  const [formErrors, setFormErrors] = useState({});
+  const [id, setAuth] = useState(sessionStorage.getItem("user"));
+  const navigate = useNavigate();
+  useEffect(() => {
+    console.log(id);
+    if (id) {
+      getUser();
+    }
+  }, []);
+
+  const getUser = async () => {
+    const url = "http://localhost:1100/nodejs/user/" + id;
+    console.log(url);
+    const res = await axios.get(url);
+    console.log(res.data);
+    setuser_name(res.data.user_name);
+    setuser_email(res.data.user_email);
+  };
+
+  const validate = () => {
+    const errors = {};
+    if (!question) {
+      errors.question = "question is required";
+    }
+    if (!subject) {
+      errors.subject = "subject is required";
+    }
+    return errors;
+  };
+
+  const submitbtn = async (e) => {
+    e.preventDefault();
+    setFormErrors(validate());
+
+    if (question && subject) {
+      const data = {
+        user_id: id,
+        subject,
+        question,
+      };
+      let res = "";
+
+      res = await axios.post("http://localhost:1100/nodejs/inquirie", data);
+
+      alert(res.data);
+      window.location.reload();
+    }
+  };
+
   return (
     <>
       {/* Home */}
@@ -26,12 +80,12 @@ export default function Home() {
                   <h1>the world</h1>
                   <div className="button home_slider_button">
                     <div className="button_bcg" />
-                    <a href="#">
+                    <Link to="/packages">
                       explore now
                       <span />
                       <span />
                       <span />
-                    </a>
+                    </Link>
                   </div>
                 </div>
               </div>
@@ -1154,8 +1208,7 @@ export default function Home() {
                     id="contact_form_name"
                     className="contact_form_name input_field"
                     placeholder="Name"
-                    required="required"
-                    data-error="Name is required."
+                    value={user_name}
                   />
                   <input
                     type="text"
@@ -1163,30 +1216,30 @@ export default function Home() {
                     className="contact_form_email input_field"
                     placeholder="E-mail"
                     required="required"
-                    data-error="Email is required."
+                    value={user_email}
                   />
                   <input
                     type="text"
                     id="contact_form_subject"
                     className="contact_form_subject input_field"
                     placeholder="Subject"
-                    required="required"
-                    data-error="Subject is required."
+                    onChange={(e) => setsubject(e.target.value)}
                   />
+                  <p style={{ color: "red" }}>{formErrors.subject}</p>
                   <textarea
                     id="contact_form_message"
                     className="text_field contact_form_message"
                     name="message"
                     rows={4}
                     placeholder="Message"
-                    required="required"
-                    data-error="Please, write us a message."
-                    defaultValue={""}
+                    onChange={(e) => setquestion(e.target.value)}
                   />
+                  <p style={{ color: "red" }}>{formErrors.question}</p>
                   <button
                     type="submit"
                     id="form_submit_button"
                     className="form_submit_button button"
+                    onClick={submitbtn}
                   >
                     send message
                     <span />

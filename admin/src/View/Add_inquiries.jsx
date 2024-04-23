@@ -8,7 +8,7 @@ export default function Add_inquiries() {
   const [entry_date, setentry_date] = useState("");
   const [update_date, setupdate_date] = useState("");
   const [entry_by, setentry_by] = useState("");
-  const[formErrors,setFormErrors]=useState({})
+  const [formErrors, setFormErrors] = useState({});
   const location = useLocation();
   const navigate = useNavigate();
   const id = location.pathname.split("/")[2]
@@ -27,7 +27,7 @@ export default function Add_inquiries() {
     const res = await axios.get(url);
     console.log(res.data);
     setquestion(res.data.question);
-    setstatus(res.data.status)
+    setstatus(res.data.status);
     setentry_date(res.data.entry_date);
     setupdate_date(res.data.update_date);
     setentry_by(res.data.entry_by);
@@ -42,18 +42,17 @@ export default function Add_inquiries() {
       errors.status = "status is required";
     }
     return errors;
-  }
+  };
 
   const submitbtn = async (e) => {
     e.preventDefault();
-    setFormErrors(validate())
+    setFormErrors(validate());
 
     if (question && status) {
-      
       const formdata = new FormData();
 
-      formdata.append("question",question);
-      formdata.append("status",status);
+      formdata.append("question", question);
+      formdata.append("status", status);
     }
 
     const data = {
@@ -95,11 +94,16 @@ export default function Add_inquiries() {
             </div>
 
             <div class="col-6">
-          <select name="cars" id="cars" class="form-control" onChange={(e)=>setstatus(e.target.value)} >
-              <option value="0">1.active</option>
-              <option value="0">2.inactive</option>          
-          </select>
-        </div>
+              <select
+                name="cars"
+                id="cars"
+                class="form-control"
+                onChange={(e) => setstatus(e.target.value)}
+              >
+                <option value="0">1.active</option>
+                <option value="0">2.inactive</option>
+              </select>
+            </div>
 
             <div class="col-6">
               <div class="form-floating">
