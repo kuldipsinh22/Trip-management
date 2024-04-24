@@ -28,7 +28,7 @@ export default function Header() {
           <div className="container">
             <div className="row">
               <div className="col d-flex flex-row">
-                <div className="phone">+45 345 3324 56789</div>
+                <div className="phone">+91 63518 45160</div>
                 <div className="social">
                   <ul className="social_list">
                     <li className="social_list_item">
@@ -62,14 +62,6 @@ export default function Header() {
                       </a>
                     </li>
                   </ul>
-                </div>
-                <div className="user_box ml-auto">
-                  <div className="user_box_login user_box_link">
-                    <a href="#">login</a>
-                  </div>
-                  <div className="user_box_register user_box_link">
-                    <a href="#">register</a>
-                  </div>
                 </div>
               </div>
             </div>
@@ -108,7 +100,7 @@ export default function Header() {
                       <Link to="/Offers">Packages</Link>
                     </li>
                     <li className="main_nav_item">
-                      <Link to="/Blogs">news</Link>
+                      <Link to="/Blogs">Blog</Link>
                     </li>
                     <li className="main_nav_item">
                       <Link to="/Contact">contact</Link>

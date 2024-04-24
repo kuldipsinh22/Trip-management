@@ -14,15 +14,16 @@ export default function Footer() {
                     <div className="logo">
                       <a href="#">
                         <img src="images/logo.png" alt="" />
-                        travelix
+                        Cheers Holidays
                       </a>
                     </div>
                   </div>
                   <p className="footer_about_text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vivamus quis vu lputate eros, iaculis consequat nisl. Nunc
-                    et suscipit urna. Integer eleme ntum orci eu vehicula
-                    pretium.
+                    we provide tour packages like your budget and share with
+                    family tour, friends group tour, solo trip, couple packages
+                    etc... so how can i help you??? we make your holidays to
+                    memorable so join us and enjoying your holidays and create
+                    lots of memories...
                   </p>
                   <ul className="footer_social_list">
                     <li className="footer_social_item">
@@ -42,12 +43,12 @@ export default function Footer() {
                     </li>
                     <li className="footer_social_item">
                       <a href="#">
-                        <i className="fa fa-dribbble" />
+                        <i className="fa fa-youtube" />
                       </a>
                     </li>
                     <li className="footer_social_item">
                       <a href="#">
-                        <i className="fa fa-behance" />
+                        <i className="fa fa-instagram" />
                       </a>
                     </li>
                   </ul>
@@ -71,7 +72,7 @@ export default function Footer() {
                       <div className="footer_blog_title">
                         <a href="blog.html">Travel with us this year</a>
                       </div>
-                      <div className="footer_blog_date">Nov 29, 2017</div>
+                      <div className="footer_blog_date">May 11, 2024</div>
                     </div>
                   </div>
                   {/* Footer blog item */}
@@ -86,7 +87,7 @@ export default function Footer() {
                       <div className="footer_blog_title">
                         <a href="blog.html">New destinations for you</a>
                       </div>
-                      <div className="footer_blog_date">Nov 29, 2017</div>
+                      <div className="footer_blog_date">May 11, 2024</div>
                     </div>
                   </div>
                   {/* Footer blog item */}
@@ -101,7 +102,7 @@ export default function Footer() {
                       <div className="footer_blog_title">
                         <a href="blog.html">Travel with us this year</a>
                       </div>
-                      <div className="footer_blog_date">Nov 29, 2017</div>
+                      <div className="footer_blog_date">May 11, 2024</div>
                     </div>
                   </div>
                 </div>
@@ -114,10 +115,10 @@ export default function Footer() {
                 <div className="footer_content footer_tags">
                   <ul className="tags_list clearfix">
                     <li className="tag_item">
-                      <a href="#">design</a>
+                      <a href="#">mountain</a>
                     </li>
                     <li className="tag_item">
-                      <a href="#">fashion</a>
+                      <a href="#">rivers</a>
                     </li>
                     <li className="tag_item">
                       <a href="#">music</a>
@@ -137,6 +138,12 @@ export default function Footer() {
                     <li className="tag_item">
                       <a href="#">travel</a>
                     </li>
+                    <li className="tag_item">
+                      <a href="#">nature</a>
+                    </li>
+                    <li className="tag_item">
+                      <a href="#">fun</a>
+                    </li>
                   </ul>
                 </div>
               </div>
@@ -154,7 +161,7 @@ export default function Footer() {
                         </div>
                       </div>
                       <div className="contact_info_text">
-                        4127 Raoul Wallenber 45b-c Gibraltar
+                        4127 Sardarnagar, Bhavnagar - 364001
                       </div>
                     </li>
                     <li className="contact_info_item d-flex flex-row">
@@ -176,7 +183,7 @@ export default function Footer() {
                           href="mailto:contactme@gmail.com?Subject=Hello"
                           target="_top"
                         >
-                          contactme@gmail.com
+                          cheersholidays@gmail.com
                         </a>
                       </div>
                     </li>
@@ -187,7 +194,9 @@ export default function Footer() {
                         </div>
                       </div>
                       <div className="contact_info_text">
-                        <a href="https://colorlib.com">www.colorlib.com</a>
+                        <a href="https://colorlib.com">
+                          www.cheersholidays.com
+                        </a>
                       </div>
                     </li>
                   </ul>
@@ -205,10 +214,10 @@ export default function Footer() {
               <div className="copyright_content d-flex flex-row align-items-center">
                 <div>
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
-                  Copyright © All rights reserved | This template is made with{" "}
+                  Copyright © All rights reserved by Khushi's | This template is
                   <i className="fa fa-heart-o" aria-hidden="true" /> by{" "}
                   <a href="https://colorlib.com" target="_blank">
-                    Colorlib
+                    Cheersholidays
                   </a>
                   {/* Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. */}
                 </div>
@@ -225,10 +234,10 @@ export default function Footer() {
                       <a href="about.html">about us</a>
                     </li>
                     <li className="footer_nav_item">
-                      <a href="offers.html">offers</a>
+                      <a href="offers.html">packages</a>
                     </li>
                     <li className="footer_nav_item">
-                      <a href="blog.html">news</a>
+                      <a href="blog.html">blog</a>
                     </li>
                     <li className="footer_nav_item">
                       <a href="contact.html">contact</a>

@@ -25,7 +25,7 @@ export default function Offers() {
           data-image-src="images/about_background.jpg"
         />
         <div className="home_content">
-          <div className="home_title">our offers</div>
+          <div className="home_title">our packages</div>
         </div>
       </div>
       {/* Offers */}

@@ -248,121 +248,7 @@ export default function Home() {
               </h2>
             </div>
           </div>
-          <div className="row">
-            <div className="col-lg-10 offset-lg-1">
-              <div className="intro_text text-center">
-                <p>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Nullam eu convallis tortor. Suspendisse potenti. In faucibus
-                  massa arcu, vitae cursus mi hendrerit nec.{" "}
-                </p>
-              </div>
-            </div>
-          </div>
-          <div className="row intro_items">
-            {/* Intro Item */}
-            <div className="col-lg-4 intro_col">
-              <div className="intro_item">
-                <div className="intro_item_overlay" />
-                {/* Image by https://unsplash.com/@dnevozhai */}
-                <div
-                  className="intro_item_background"
-                  style={{ backgroundImage: "url(images/intro_1.jpg)" }}
-                />
-                <div className="intro_item_content d-flex flex-column align-items-center justify-content-center">
-                  <div className="intro_date">May 25th - June 01st</div>
-                  <div className="button intro_button">
-                    <div className="button_bcg" />
-                    <a href="#">
-                      see more
-                      <span />
-                      <span />
-                      <span />
-                    </a>
-                  </div>
-                  <div className="intro_center text-center">
-                    <h1>Mauritius</h1>
-                    <div className="intro_price">From $1450</div>
-                    <div className="rating rating_4">
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Intro Item */}
-            <div className="col-lg-4 intro_col">
-              <div className="intro_item">
-                <div className="intro_item_overlay" />
-                {/* Image by https://unsplash.com/@hellolightbulb */}
-                <div
-                  className="intro_item_background"
-                  style={{ backgroundImage: "url(images/intro_2.jpg)" }}
-                />
-                <div className="intro_item_content d-flex flex-column align-items-center justify-content-center">
-                  <div className="intro_date">May 25th - June 01st</div>
-                  <div className="button intro_button">
-                    <div className="button_bcg" />
-                    <a href="#">
-                      see more
-                      <span />
-                      <span />
-                      <span />
-                    </a>
-                  </div>
-                  <div className="intro_center text-center">
-                    <h1>Greece</h1>
-                    <div className="intro_price">From $1450</div>
-                    <div className="rating rating_4">
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            {/* Intro Item */}
-            <div className="col-lg-4 intro_col">
-              <div className="intro_item">
-                <div className="intro_item_overlay" />
-                {/* Image by https://unsplash.com/@willianjusten */}
-                <div
-                  className="intro_item_background"
-                  style={{ backgroundImage: "url(images/intro_3.jpg)" }}
-                />
-                <div className="intro_item_content d-flex flex-column align-items-center justify-content-center">
-                  <div className="intro_date">May 25th - June 01st</div>
-                  <div className="button intro_button">
-                    <div className="button_bcg" />
-                    <a href="#">
-                      see more
-                      <span />
-                      <span />
-                      <span />
-                    </a>
-                  </div>
-                  <div className="intro_center text-center">
-                    <h1>Scotland</h1>
-                    <div className="intro_price">From $1450</div>
-                    <div className="rating rating_4">
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                      <i className="fa fa-star" />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+          x``{" "}
         </div>
       </div>
       {/* CTA */}
@@ -443,21 +329,10 @@ export default function Home() {
                       <i />
                     </div>
                     <p className="cta_text">
-                      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                      Nullam eu convallis tortor. Suspendisse potenti. In
-                      faucibus massa arcu, vitae cursus mi hendrerit nec. Proin
-                      bibendum, augue faucibus tincidunt ultrices, tortor augue
-                      gravida lectus, et efficitur enim justo vel ligula.
+                      Maldives is the best package for couple package, mostly
+                      couple select the package for thair honeymoon. maldives
+                      are most atractive place..
                     </p>
-                    <div className="button cta_button">
-                      <div className="button_bcg" />
-                      <a href="#">
-                        book now
-                        <span />
-                        <span />
-                        <span />
-                      </a>
-                    </div>
                   </div>
                 </div>
                 {/* CTA Slider Nav - Prev */}
@@ -558,14 +433,14 @@ export default function Home() {
                         style={{ backgroundImage: "url(images/offer_1.jpg)" }}
                       />
                       <div className="offer_name">
-                        <a href="#">grand castle</a>
+                        <a href="#">hotel krishna</a>
                       </div>
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="offers_content">
                       <div className="offers_price">
-                        $70<span>per night</span>
+                        rs.2000<span>per night</span>
                       </div>
                       <div className="rating_r rating_r_4 offers_rating">
                         <i />
@@ -615,14 +490,14 @@ export default function Home() {
                         style={{ backgroundImage: "url(images/offer_2.jpg)" }}
                       />
                       <div className="offer_name">
-                        <a href="#">turkey hills</a>
+                        <a href="#">drive hills</a>
                       </div>
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="offers_content">
                       <div className="offers_price">
-                        $50<span>per night</span>
+                        rs.1500<span>per night</span>
                       </div>
                       <div className="rating_r rating_r_4 offers_rating">
                         <i />
@@ -672,14 +547,14 @@ export default function Home() {
                         style={{ backgroundImage: "url(images/offer_3.jpg)" }}
                       />
                       <div className="offer_name">
-                        <a href="#">island dream</a>
+                        <a href="#">dream villa</a>
                       </div>
                     </div>
                   </div>
                   <div className="col-lg-6">
                     <div className="offers_content">
                       <div className="offers_price">
-                        $90<span>per night</span>
+                        Rs.900<span>per night</span>
                       </div>
                       <div className="rating_r rating_r_4 offers_rating">
                         <i />
@@ -736,7 +611,7 @@ export default function Home() {
                   <div className="col-lg-6">
                     <div className="offers_content">
                       <div className="offers_price">
-                        $30<span>per night</span>
+                        rs.3000<span>per night</span>
                       </div>
                       <div className="rating_r rating_r_4 offers_rating">
                         <i />
@@ -778,417 +653,7 @@ export default function Home() {
         </div>
       </div>
       {/* Testimonials */}
-      <div className="testimonials">
-        <div className="test_border" />
-        <div className="container">
-          <div className="row">
-            <div className="col text-center">
-              <h2 className="section_title">what our clients say about us</h2>
-            </div>
-          </div>
-          <div className="row">
-            <div className="col">
-              {/* Testimonials Slider */}
-              <div className="test_slider_container">
-                <div className="owl-carousel owl-theme test_slider">
-                  {/* Testimonial Item */}
-                  <div className="owl-item">
-                    <div className="test_item">
-                      <div className="test_image">
-                        <img
-                          src="images/test_1.jpg"
-                          alt="https://unsplash.com/@anniegray"
-                        />
-                      </div>
-                      <div className="test_icon">
-                        <img src="images/backpack.png" alt="" />
-                      </div>
-                      <div className="test_content_container">
-                        <div className="test_content">
-                          <div className="test_item_info">
-                            <div className="test_name">carla smith</div>
-                            <div className="test_date">May 24, 2017</div>
-                          </div>
-                          <div className="test_quote_title">
-                            " Best holliday ever "
-                          </div>
-                          <p className="test_quote_text">
-                            Nullam eu convallis tortor. Suspendisse potenti. In
-                            faucibus massa arcu, vitae cursus mi hendrerit nec.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Testimonial Item */}
-                  <div className="owl-item">
-                    <div className="test_item">
-                      <div className="test_image">
-                        <img
-                          src="images/test_2.jpg"
-                          alt="https://unsplash.com/@tschax"
-                        />
-                      </div>
-                      <div className="test_icon">
-                        <img src="images/island_t.png" alt="" />
-                      </div>
-                      <div className="test_content_container">
-                        <div className="test_content">
-                          <div className="test_item_info">
-                            <div className="test_name">carla smith</div>
-                            <div className="test_date">May 24, 2017</div>
-                          </div>
-                          <div className="test_quote_title">
-                            " Best holliday ever "
-                          </div>
-                          <p className="test_quote_text">
-                            Nullam eu convallis tortor. Suspendisse potenti. In
-                            faucibus massa arcu, vitae cursus mi hendrerit nec.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Testimonial Item */}
-                  <div className="owl-item">
-                    <div className="test_item">
-                      <div className="test_image">
-                        <img
-                          src="images/test_3.jpg"
-                          alt="https://unsplash.com/@seefromthesky"
-                        />
-                      </div>
-                      <div className="test_icon">
-                        <img src="images/kayak.png" alt="" />
-                      </div>
-                      <div className="test_content_container">
-                        <div className="test_content">
-                          <div className="test_item_info">
-                            <div className="test_name">carla smith</div>
-                            <div className="test_date">May 24, 2017</div>
-                          </div>
-                          <div className="test_quote_title">
-                            " Best holliday ever "
-                          </div>
-                          <p className="test_quote_text">
-                            Nullam eu convallis tortor. Suspendisse potenti. In
-                            faucibus massa arcu, vitae cursus mi hendrerit nec.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Testimonial Item */}
-                  <div className="owl-item">
-                    <div className="test_item">
-                      <div className="test_image">
-                        <img src="images/test_2.jpg" alt="" />
-                      </div>
-                      <div className="test_icon">
-                        <img src="images/island_t.png" alt="" />
-                      </div>
-                      <div className="test_content_container">
-                        <div className="test_content">
-                          <div className="test_item_info">
-                            <div className="test_name">carla smith</div>
-                            <div className="test_date">May 24, 2017</div>
-                          </div>
-                          <div className="test_quote_title">
-                            " Best holliday ever "
-                          </div>
-                          <p className="test_quote_text">
-                            Nullam eu convallis tortor. Suspendisse potenti. In
-                            faucibus massa arcu, vitae cursus mi hendrerit nec.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Testimonial Item */}
-                  <div className="owl-item">
-                    <div className="test_item">
-                      <div className="test_image">
-                        <img src="images/test_1.jpg" alt="" />
-                      </div>
-                      <div className="test_icon">
-                        <img src="images/backpack.png" alt="" />
-                      </div>
-                      <div className="test_content_container">
-                        <div className="test_content">
-                          <div className="test_item_info">
-                            <div className="test_name">carla smith</div>
-                            <div className="test_date">May 24, 2017</div>
-                          </div>
-                          <div className="test_quote_title">
-                            " Best holliday ever "
-                          </div>
-                          <p className="test_quote_text">
-                            Nullam eu convallis tortor. Suspendisse potenti. In
-                            faucibus massa arcu, vitae cursus mi hendrerit nec.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  {/* Testimonial Item */}
-                  <div className="owl-item">
-                    <div className="test_item">
-                      <div className="test_image">
-                        <img src="images/test_3.jpg" alt="" />
-                      </div>
-                      <div className="test_icon">
-                        <img src="images/kayak.png" alt="" />
-                      </div>
-                      <div className="test_content_container">
-                        <div className="test_content">
-                          <div className="test_item_info">
-                            <div className="test_name">carla smith</div>
-                            <div className="test_date">May 24, 2017</div>
-                          </div>
-                          <div className="test_quote_title">
-                            " Best holliday ever "
-                          </div>
-                          <p className="test_quote_text">
-                            Nullam eu convallis tortor. Suspendisse potenti. In
-                            faucibus massa arcu, vitae cursus mi hendrerit nec.
-                          </p>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                {/* Testimonials Slider Nav - Prev */}
-                <div className="test_slider_nav test_slider_prev">
-                  <svg
-                    version="1.1"
-                    id="Layer_6"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    width="28px"
-                    height="33px"
-                    viewBox="0 0 28 33"
-                    enableBackground="new 0 0 28 33"
-                    xmlSpace="preserve"
-                  >
-                    <defs>
-                      <linearGradient id="test_grad_prev">
-                        <stop offset="0%" stopColor="#fa9e1b" />
-                        <stop offset="100%" stopColor="#8d4fff" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      className="nav_path"
-                      fill="#F3F6F9"
-                      d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
-                  M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
-                  C22.545,2,26,5.541,26,9.909V23.091z"
-                    />
-                    <polygon
-                      className="nav_arrow"
-                      fill="#F3F6F9"
-                      points="15.044,22.222 16.377,20.888 12.374,16.885 16.377,12.882 15.044,11.55 9.708,16.885 11.04,18.219 
-                  11.042,18.219 "
-                    />
-                  </svg>
-                </div>
-                {/* Testimonials Slider Nav - Next */}
-                <div className="test_slider_nav test_slider_next">
-                  <svg
-                    version="1.1"
-                    id="Layer_7"
-                    xmlns="http://www.w3.org/2000/svg"
-                    xmlnsXlink="http://www.w3.org/1999/xlink"
-                    x="0px"
-                    y="0px"
-                    width="28px"
-                    height="33px"
-                    viewBox="0 0 28 33"
-                    enableBackground="new 0 0 28 33"
-                    xmlSpace="preserve"
-                  >
-                    <defs>
-                      <linearGradient id="test_grad_next">
-                        <stop offset="0%" stopColor="#fa9e1b" />
-                        <stop offset="100%" stopColor="#8d4fff" />
-                      </linearGradient>
-                    </defs>
-                    <path
-                      className="nav_path"
-                      fill="#F3F6F9"
-                      d="M19,0H9C4.029,0,0,4.029,0,9v15c0,4.971,4.029,9,9,9h10c4.97,0,9-4.029,9-9V9C28,4.029,23.97,0,19,0z
-                M26,23.091C26,27.459,22.545,31,18.285,31H9.714C5.454,31,2,27.459,2,23.091V9.909C2,5.541,5.454,2,9.714,2h8.571
-                C22.545,2,26,5.541,26,9.909V23.091z"
-                    />
-                    <polygon
-                      className="nav_arrow"
-                      fill="#F3F6F9"
-                      points="13.044,11.551 11.71,12.885 15.714,16.888 11.71,20.891 13.044,22.224 18.379,16.888 17.048,15.554 
-                17.046,15.554 "
-                    />
-                  </svg>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div className="trending">
-        <div className="container">
-          <div className="row">
-            <div className="col text-center">
-              <h2 className="section_title">trending now</h2>
-            </div>
-          </div>
-          <div className="row trending_container">
-            {/* Trending Item */}
-            <div className="col-lg-3 col-sm-6">
-              <div className="trending_item clearfix">
-                <div className="trending_image">
-                  <img
-                    src="images/trend_1.png"
-                    alt="https://unsplash.com/@fransaraco"
-                  />
-                </div>
-                <div className="trending_content">
-                  <div className="trending_title">
-                    <a href="#">grand hotel</a>
-                  </div>
-                  <div className="trending_price">From $182</div>
-                  <div className="trending_location">madrid, spain</div>
-                </div>
-              </div>
-            </div>
-            {/* Trending Item */}
-            <div className="col-lg-3 col-sm-6">
-              <div className="trending_item clearfix">
-                <div className="trending_image">
-                  <img
-                    src="images/trend_2.png"
-                    alt="https://unsplash.com/@grovemade"
-                  />
-                </div>
-                <div className="trending_content">
-                  <div className="trending_title">
-                    <a href="#">mars hotel</a>
-                  </div>
-                  <div className="trending_price">From $182</div>
-                  <div className="trending_location">madrid, spain</div>
-                </div>
-              </div>
-            </div>
-            {/* Trending Item */}
-            <div className="col-lg-3 col-sm-6">
-              <div className="trending_item clearfix">
-                <div className="trending_image">
-                  <img
-                    src="images/trend_3.png"
-                    alt="https://unsplash.com/@jbriscoe"
-                  />
-                </div>
-                <div className="trending_content">
-                  <div className="trending_title">
-                    <a href="#">queen hotel</a>
-                  </div>
-                  <div className="trending_price">From $182</div>
-                  <div className="trending_location">madrid, spain</div>
-                </div>
-              </div>
-            </div>
-            {/* Trending Item */}
-            <div className="col-lg-3 col-sm-6">
-              <div className="trending_item clearfix">
-                <div className="trending_image">
-                  <img
-                    src="images/trend_4.png"
-                    alt="https://unsplash.com/@oowgnuj"
-                  />
-                </div>
-                <div className="trending_content">
-                  <div className="trending_title">
-                    <a href="#">mars hotel</a>
-                  </div>
-                  <div className="trending_price">From $182</div>
-                  <div className="trending_location">madrid, spain</div>
-                </div>
-              </div>
-            </div>
-            {/* Trending Item */}
-            <div className="col-lg-3 col-sm-6">
-              <div className="trending_item clearfix">
-                <div className="trending_image">
-                  <img
-                    src="images/trend_5.png"
-                    alt="https://unsplash.com/@mindaugas"
-                  />
-                </div>
-                <div className="trending_content">
-                  <div className="trending_title">
-                    <a href="#">grand hotel</a>
-                  </div>
-                  <div className="trending_price">From $182</div>
-                  <div className="trending_location">madrid, spain</div>
-                </div>
-              </div>
-            </div>
-            {/* Trending Item */}
-            <div className="col-lg-3 col-sm-6">
-              <div className="trending_item clearfix">
-                <div className="trending_image">
-                  <img
-                    src="images/trend_6.png"
-                    alt="https://unsplash.com/@itsnwa"
-                  />
-                </div>
-                <div className="trending_content">
-                  <div className="trending_title">
-                    <a href="#">mars hotel</a>
-                  </div>
-                  <div className="trending_price">From $182</div>
-                  <div className="trending_location">madrid, spain</div>
-                </div>
-              </div>
-            </div>
-            {/* Trending Item */}
-            <div className="col-lg-3 col-sm-6">
-              <div className="trending_item clearfix">
-                <div className="trending_image">
-                  <img
-                    src="images/trend_7.png"
-                    alt="https://unsplash.com/@rktkn"
-                  />
-                </div>
-                <div className="trending_content">
-                  <div className="trending_title">
-                    <a href="#">queen hotel</a>
-                  </div>
-                  <div className="trending_price">From $182</div>
-                  <div className="trending_location">madrid, spain</div>
-                </div>
-              </div>
-            </div>
-            {/* Trending Item */}
-            <div className="col-lg-3 col-sm-6">
-              <div className="trending_item clearfix">
-                <div className="trending_image">
-                  <img
-                    src="images/trend_8.png"
-                    alt="https://unsplash.com/@thoughtcatalog"
-                  />
-                </div>
-                <div className="trending_content">
-                  <div className="trending_title">
-                    <a href="#">mars hotel</a>
-                  </div>
-                  <div className="trending_price">From $182</div>
-                  <div className="trending_location">madrid, spain</div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
       <div className="contact">
         <div
           className="contact_background"

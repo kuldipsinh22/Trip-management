@@ -145,15 +145,16 @@ export default function Contact() {
                     <div className="logo">
                       <a href="#">
                         <img src="images/logo.png" alt="" />
-                        travelix
+                        Cheers Holidays
                       </a>
                     </div>
                   </div>
                   <p className="about_text">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                    Vivamus quis vu lputate eros, iaculis consequat nisl. Nunc
-                    et suscipit urna. Integer eleme ntum orci eu vehicula
-                    iaculis consequat nisl. Nunc et suscipit urna pretium.
+                    we provide tour packages like your budget and share with
+                    family tour, friends group tour, solo trip, couple packages
+                    etc... so how can i help you??? we make your holidays to
+                    memorable so join us and enjoying your holidays and create
+                    lots of memories...
                   </p>
                   <ul className="about_social_list">
                     <li className="about_social_item">
@@ -173,12 +174,12 @@ export default function Contact() {
                     </li>
                     <li className="about_social_item">
                       <a href="#">
-                        <i className="fa fa-dribbble" />
+                        <i className="fa fa-youtube" />
                       </a>
                     </li>
                     <li className="about_social_item">
                       <a href="#">
-                        <i className="fa fa-behance" />
+                        <i className="fa fa-instagram" />
                       </a>
                     </li>
                   </ul>
@@ -195,7 +196,7 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="contact_info_text">
-                        4127 Raoul Wallenber 45b-c Gibraltar
+                        4127 Sardarnagar, Bhavnagar
                       </div>
                     </li>
                     <li className="contact_info_item d-flex flex-row">
@@ -217,7 +218,7 @@ export default function Contact() {
                           href="mailto:contactme@gmail.com?Subject=Hello"
                           target="_top"
                         >
-                          contactme@gmail.com
+                          Cheeresholidays@gmail.com
                         </a>
                       </div>
                     </li>
@@ -228,7 +229,9 @@ export default function Contact() {
                         </div>
                       </div>
                       <div className="contact_info_text">
-                        <a href="https://colorlib.com">www.colorlib.com</a>
+                        <a href="https://colorlib.com">
+                          www.cheersholidays.com
+                        </a>
                       </div>
                     </li>
                   </ul>

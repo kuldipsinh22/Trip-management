@@ -27,16 +27,26 @@ export default function About() {
               <div className="intro_content">
                 <div className="intro_title">we have the best tours</div>
                 <p className="intro_text">
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                  Vivamus quis vulputate eros, iaculis consequat nisl. Nunc et
-                  suscipit urna. Integer elementum orci eu vehicula pretium.
-                  Donec bibendum tristique condimentum. Aenean in lacus ligula.
-                  Phasellus euismod gravida eros. Aenean nec ipsum aliquet,
-                  pharetra magna id, interdum sapien. Etiam id lorem eu nisl
-                  pellentesque semper. Nullam tincidunt metus placerat, suscipit
-                  leo ut, tempus nulla. Fusce at eleifend tellus. Ut eleifend
-                  dui nunc, non fermentum quam placerat non. Etiam venenatis
-                  nibh augue, sed eleifend justo tristique eu
+                  Cheers Holidays Tour Company,Founded in 2023.Welcome To Cheers
+                  Holidays. Cheers Holidays a Tourisam management company with a
+                  difference! What makes us different?What makes us special? we
+                  offer customized holidays and packages, the way you want!
+                  right from the duration of stay to the transportation.it is
+                  all specially designed to suit your needs & fulfilyour
+                  desires. we are provide best Tour Packages.we make a
+                  commitment of superior and back it up with an in-house team
+                  that ensure your trip is smooth & well planned from arrival to
+                  departure and monitor your tour round the clock to make it
+                  comfortable & enjoyable. our aim is to produce such product
+                  which not only liked by people but is lived by the people,
+                  i.e.we want you to live every moment when you are on your
+                  holidays. we want to make you feel as you are on the top of
+                  the world having attained all the happiness of life. our
+                  motive is to give you maximum enjoyment from your investment
+                  and giving you optimum exposure of the places for destination
+                  you have selected, so that we make your holidays memorable. to
+                  know more,you can connect with us via any of the following
+                  mediums. wish you a safe and happy journey!
                 </p>
                 <div className="button intro_button">
                   <div className="button_bcg">
@@ -64,10 +74,10 @@ export default function About() {
           <div className="row">
             <div className="col-lg-10 offset-lg-1 text-center">
               <p className="stats_text">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vivamus
-                quis vulputate eros, iaculis consequat nisl. Nunc et suscipit
-                urna. Integer elementum orci eu vehicula pretium. Donec bibendum
-                tristique condimentum. Aenean in lacus ligula.{" "}
+                Cheers holidays tour is best tour of the year our website
+                through many peoples are enjoying their holidays we provide many
+                facilities and our tour agency are provide many more packages
+                with pockets friendly and user demand to provide packages.
               </p>
             </div>
           </div>
@@ -220,35 +230,7 @@ export default function About() {
         </div>
       </div>
       {/* Add */}
-      <div className="add">
-        <div className="container">
-          <div className="row">
-            <div className="col">
-              <div className="add_container">
-                <div
-                  className="add_background"
-                  style={{ backgroundImage: "url(images/add.jpg)" }}
-                />
-                <div className="add_content">
-                  <h1 className="add_title">thailand</h1>
-                  <div className="add_subtitle">
-                    From <span>$999</span>
-                  </div>
-                  <div className="button add_button">
-                    <div className="button_bcg" />
-                    <a href="#">
-                      explore now
-                      <span />
-                      <span />
-                      <span />
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
+
       {/* Milestones */}
       <div className="milestones">
         <div className="container">
@@ -260,7 +242,7 @@ export default function About() {
                   <img src="images/milestone_1.png" alt="" />
                 </div>
                 <div className="milestone_counter" data-end-value={255}>
-                  0
+                  3527+
                 </div>
                 <div className="milestone_text">Clients</div>
               </div>
@@ -272,9 +254,9 @@ export default function About() {
                   <img src="images/milestone_2.png" alt="" />
                 </div>
                 <div className="milestone_counter" data-end-value={1176}>
-                  0
+                  20+
                 </div>
-                <div className="milestone_text">Projects</div>
+                <div className="milestone_text">Agency</div>
               </div>
             </div>
             {/* Milestone */}
@@ -284,7 +266,7 @@ export default function About() {
                   <img src="images/milestone_3.png" alt="" />
                 </div>
                 <div className="milestone_counter" data-end-value={39}>
-                  0
+                  7
                 </div>
                 <div className="milestone_text">Countries</div>
               </div>
@@ -296,9 +278,9 @@ export default function About() {
                   <img src="images/milestone_4.png" alt="" />
                 </div>
                 <div className="milestone_counter" data-end-value={127}>
-                  0
+                  30+
                 </div>
-                <div className="milestone_text">Coffees</div>
+                <div className="milestone_text">Guides</div>
               </div>
             </div>
           </div>

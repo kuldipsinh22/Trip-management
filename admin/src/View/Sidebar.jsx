@@ -53,6 +53,13 @@ export default function Sidebar() {
                   <span>Booking</span>
                 </Link>
               </li>
+
+              <li class="nav-item">
+                <Link class="nav-link collapsed" to="/Highlights">
+                  <i class="bi bi-grid"></i>
+                  <span>Highlights</span>
+                </Link>
+              </li>
             </>
           ) : (
             <>
